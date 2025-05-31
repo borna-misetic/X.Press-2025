@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bhynyvyo2b5qu" path="res://Scenes/ameba_blob.tscn" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cweao267oa60y" path="res://Scenes/Background.tscn" id="2_8gbba"]
 [ext_resource type="Script" uid="uid://bkh7cy8217nig" path="res://Scripts/background.gd" id="3_jjvhh"]
-[ext_resource type="PackedScene" path="res://Scenes/spawner_component.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://ruriot5w34aa" path="res://Scenes/spawner_component.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cafw0njeulctk" path="res://Scenes/Enemys/BaseEnemy/TestEnemy.tscn" id="6_21xkr"]
 
 [node name="Main" type="Node2D"]

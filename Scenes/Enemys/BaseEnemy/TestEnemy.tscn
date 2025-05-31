@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://cafw0njeulctk"]
+[gd_scene load_steps=9 format=3 uid="uid://cafw0njeulctk"]
 
 [ext_resource type="Texture2D" uid="uid://740y7gbq7ljb" path="res://Scripts/Borna.jpg" id="1_ypq6p"]
 [ext_resource type="PackedScene" uid="uid://cctoqlo1g7qhv" path="res://Scenes/Enemys/BaseEnemy/EnemyBrain.tscn" id="2_ypq6p"]
+[ext_resource type="PackedScene" uid="uid://4l10alvui00w" path="res://Scenes/health.tscn" id="3_bsgnj"]
+[ext_resource type="PackedScene" uid="uid://eh6x3dh0iwr3" path="res://Scenes/HurtBox.tscn" id="4_83dho"]
+[ext_resource type="PackedScene" uid="uid://duml0mhm0h0oe" path="res://Scenes/HealthBarEnemy.tscn" id="5_yqiap"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ypq6p"]
-radius = 548.377
+radius = 950.32
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsgnj"]
+radius = 88.0057
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_83dho"]
+radius = 89.2693
 
 [node name="TestEnemy" type="CharacterBody2D"]
 position = Vector2(-3, 2)
@@ -23,3 +32,29 @@ speed = 5000
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Eyes"]
 position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_ypq6p")
+
+[node name="HealthArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthArea"]
+position = Vector2(2, -2)
+shape = SubResource("CircleShape2D_bsgnj")
+
+[node name="Health" parent="." node_paths=PackedStringArray("entity") instance=ExtResource("3_bsgnj")]
+entity = NodePath("../HealthArea")
+
+[node name="HurtBox" parent="." node_paths=PackedStringArray("hurt_area") instance=ExtResource("4_83dho")]
+hurt_area = NodePath("../Hurt")
+
+[node name="Hurt" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt"]
+shape = SubResource("CircleShape2D_83dho")
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("MortalsHealth", "ItFollows") instance=ExtResource("5_yqiap")]
+offset_left = -58.0
+offset_top = 164.0
+offset_right = -58.0
+offset_bottom = 164.0
+MortalsHealth = NodePath("../Health")
+ItFollows = NodePath("..")

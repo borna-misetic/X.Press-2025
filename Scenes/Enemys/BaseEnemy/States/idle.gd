@@ -13,6 +13,7 @@ func _ready() -> void:
 func Enter():
 	print(">Tu sam");
 	start_follow = false;
+	get_parent().get_parent().body.modulate = Color(0,0,1);
 
 func Exit():
 	pass
