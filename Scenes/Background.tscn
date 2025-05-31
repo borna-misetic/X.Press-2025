@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b3bsk1jvng1a5" path="res://Textures/WhiteTestingTex.png" id="1_27ak2"]
 [ext_resource type="Texture2D" uid="uid://bax0hg4tkerc" path="res://Textures/smoke.png" id="2_7kl6s"]
-[ext_resource type="Texture2D" uid="uid://deqk4ncpdcmom" path="res://Textures/ball.png" id="3_hcp8y"]
+[ext_resource type="Texture2D" uid="uid://b5pn3mwga8sf5" path="res://Textures/ball.png" id="3_hcp8y"]
 [ext_resource type="Shader" uid="uid://buoki5ed4u14s" path="res://Shaders/Soup.gdshader" id="4_rqs8y"]
 [ext_resource type="Texture2D" uid="uid://cdxrt2nuqgfue" path="res://Textures/Swirl_01-512x512.png" id="5_vxnle"]
 [ext_resource type="Shader" uid="uid://yc1juobgft8k" path="res://Shaders/shader_test.gdshader" id="6_8sjso"]
