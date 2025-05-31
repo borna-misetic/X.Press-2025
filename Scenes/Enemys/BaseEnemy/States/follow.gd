@@ -26,7 +26,8 @@ func follow():
 	pass;
 
 func on_body_exited(body : Node2D):
-	loose_sight.start();
+	if body == PlayerGlobal.player:
+		loose_sight.start();
 
 func _on_loose_sight_timeout() -> void:
 	start_idle = true;
