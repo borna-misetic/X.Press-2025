@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://tx6myed6ys5w"]
+
+[ext_resource type="Script" uid="uid://dpayl8i0njto1" path="res://Scenes/EyeCandy/ghost_sprite/ghost_sprite.gd" id="1_dvx6h"]
+
+[node name="GhostSprite" type="Sprite2D"]
+show_behind_parent = true
+script = ExtResource("1_dvx6h")

@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgvxh73ilsgx6"]
+[gd_scene load_steps=8 format=3 uid="uid://bgvxh73ilsgx6"]
 
 [ext_resource type="PackedScene" uid="uid://66yey5wgghoi" path="res://Scenes/ameba_player.tscn" id="1_6o2w5"]
 [ext_resource type="Texture2D" uid="uid://b5pn3mwga8sf5" path="res://Textures/ball.png" id="2_q6t3y"]
 [ext_resource type="PackedScene" uid="uid://eh6x3dh0iwr3" path="res://Scenes/HurtBox.tscn" id="3_7tjmx"]
 [ext_resource type="PackedScene" uid="uid://cafw0njeulctk" path="res://Scenes/Enemys/BaseEnemy/TestEnemy.tscn" id="4_q6t3y"]
+[ext_resource type="PackedScene" uid="uid://tx6myed6ys5w" path="res://Scenes/EyeCandy/ghost_sprite/ghost_sprite.tscn" id="5_3iira"]
+[ext_resource type="Texture2D" uid="uid://cvq3n7qo86jqq" path="res://Textures/ameba_start.png" id="6_3iira"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3iira"]
 radius = 48.0416
@@ -30,3 +32,8 @@ hurt_area = NodePath("../Area2D")
 
 [node name="TestEnemy" parent="." instance=ExtResource("4_q6t3y")]
 position = Vector2(1360, 283)
+
+[node name="GhostSprite" parent="." instance=ExtResource("5_3iira")]
+position = Vector2(2, -1)
+scale = Vector2(5.76, 5.32)
+texture = ExtResource("6_3iira")

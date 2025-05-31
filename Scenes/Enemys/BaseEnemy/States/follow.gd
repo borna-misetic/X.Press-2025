@@ -14,6 +14,7 @@ func Exit():
 
 func Update(_delta:float):
 	enemy_brain.body.velocity = get_player_direction() * enemy_brain.speed * enemy_brain.follow_speed_factor * _delta;
+	look_at_player()
 	enemy_brain.body.move_and_slide()
 	
 	check_idle()
@@ -30,6 +31,8 @@ func on_body_exited(body : Node2D):
 func _on_loose_sight_timeout() -> void:
 	start_idle = true;
 
+func look_at_player():
+	enemy_brain.body.look_at(PlayerGlobal.player.global_position);
 
 func check_idle():
 	if start_idle == true:
