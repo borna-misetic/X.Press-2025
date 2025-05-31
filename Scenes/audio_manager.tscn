@@ -14,21 +14,28 @@ script = ExtResource("1_tnn7g")
 
 [node name="MainMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_5kf6k")
+bus = &"Music"
 
 [node name="Stage1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_tnn7g")
+bus = &"Music"
 
 [node name="Stage2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_lwpe1")
+bus = &"Music"
 
 [node name="Stage3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_jmilc")
+bus = &"Music"
 
 [node name="EndingMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_5nrbi")
+bus = &"Music"
 
 [node name="HoverElement" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_pn88s")
+bus = &"SFX"
 
 [node name="ClickElement" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_fasow")
+bus = &"SFX"
