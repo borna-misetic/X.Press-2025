@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dti6yj5yhk2m5"]
+[gd_scene load_steps=9 format=3 uid="uid://66yey5wgghoi"]
 
 [ext_resource type="Texture2D" uid="uid://cvq3n7qo86jqq" path="res://Textures/ameba_start.png" id="1_b5iwm"]
-[ext_resource type="PackedScene" uid="uid://b6x1ermp6suis" path="res://Scenes/player_component.tscn" id="2_1pgcd"]
-[ext_resource type="PackedScene" uid="uid://1cxierqi81nm" path="res://Scenes/camera_component.tscn" id="3_jbmmg"]
+[ext_resource type="PackedScene" path="res://Scenes/player_component.tscn" id="2_1pgcd"]
+[ext_resource type="PackedScene" path="res://Scenes/camera_component.tscn" id="3_jbmmg"]
 
 [sub_resource type="Animation" id="Animation_ada53"]
 length = 0.001
