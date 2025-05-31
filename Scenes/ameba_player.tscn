@@ -1,14 +1,87 @@
-[gd_scene load_steps=3 format=3 uid="uid://cumub07fexsvk"]
+[gd_scene load_steps=9 format=3 uid="uid://dti6yj5yhk2m5"]
 
-[ext_resource type="Texture2D" uid="uid://740y7gbq7ljb" path="res://Scripts/Borna.jpg" id="1_magvi"]
+[ext_resource type="Texture2D" uid="uid://cvq3n7qo86jqq" path="res://Textures/ameba_start.png" id="1_b5iwm"]
 [ext_resource type="PackedScene" uid="uid://b6x1ermp6suis" path="res://Scenes/player_component.tscn" id="2_1pgcd"]
+[ext_resource type="PackedScene" uid="uid://1cxierqi81nm" path="res://Scenes/camera_component.tscn" id="3_jbmmg"]
+
+[sub_resource type="Animation" id="Animation_ada53"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jbmmg"]
+resource_name = "idle"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.26667, 2.5),
+"transitions": PackedFloat32Array(0.392292, 0.392292, 0.392292),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gh438"]
+resource_name = "move"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4),
+"transitions": PackedFloat32Array(0.329877, 2.37841, 0.210224, 2.92817, 0.287175),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1), Vector2(1, 1), Vector2(0.8, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x1s3d"]
+_data = {
+&"RESET": SubResource("Animation_ada53"),
+&"idle": SubResource("Animation_jbmmg"),
+&"move": SubResource("Animation_gh438")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jbmmg"]
+radius = 71.0
 
 [node name="AmebaPlayer" type="CharacterBody2D"]
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_magvi")
+texture = ExtResource("1_b5iwm")
 
-[node name="PlayerComponent" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_1pgcd")]
+[node name="PlayerComponent" parent="." node_paths=PackedStringArray("camera", "player") instance=ExtResource("2_1pgcd")]
+camera = NodePath("../CameraComponent")
 player = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_x1s3d")
+}
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jbmmg")
+
+[node name="CameraComponent" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_jbmmg")]
+player = NodePath("..")
+lerpScale = 7.0
+moveScale = 0.2
