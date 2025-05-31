@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="X.Press-2025"
-run/main_scene="uid://cg8jtcoalqrii"
+run/main_scene="uid://dedd7gw1npskj"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [display]
