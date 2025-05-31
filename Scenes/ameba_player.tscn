@@ -8,11 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://h3jdas4d3j4h" path="res://Scenes/upgrade_component.tscn" id="6_x1s3d"]
 [ext_resource type="PackedScene" uid="uid://cj2kxni3xgmrl" path="res://Scenes/dash_component.tscn" id="7_05x1w"]
 [ext_resource type="PackedScene" uid="uid://dvr53mqowi2fo" path="res://Scenes/EyeCandy/ghost_sprite/player_ghost_sprite.tscn" id="8_ci70g"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://bll45vtkjlj05" path="res://Scenes/Health bar.tscn" id="8_wq8bw"]
 [ext_resource type="PackedScene" uid="uid://yqllr5qhgisb" path="res://Scenes/Weapons/cell_stage/acid_spit/double_acid_shooter.tscn" id="10_wq8bw"]
+=======
+>>>>>>> b849b2f03b93a1ba8654e1292b8af9fc320b6a46
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jbmmg"]
-radius = 166.003
+radius = 363.112
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_05x1w"]
 radius = 130.465
@@ -59,6 +62,7 @@ experienceHanlder = NodePath("../../ExperienceHandler")
 healthComponent = NodePath("../../Health")
 playerComponent = NodePath("../../PlayerComponent")
 
+<<<<<<< HEAD
 [node name="HealthBar" parent="CanvasLayer" node_paths=PackedStringArray("MortalsHealth", "ItFollows", "Camera") instance=ExtResource("8_wq8bw")]
 MortalsHealth = NodePath("../../Health")
 ItFollows = NodePath("../..")
@@ -77,3 +81,7 @@ scale = Vector2(1.5, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hearth"]
 shape = SubResource("CircleShape2D_05x1w")
+=======
+[node name="Fart CD timer" type="Timer" parent="."]
+one_shot = true
+>>>>>>> b849b2f03b93a1ba8654e1292b8af9fc320b6a46
