@@ -1,18 +1,18 @@
 [gd_scene load_steps=7 format=3 uid="uid://dedd7gw1npskj"]
 
 [ext_resource type="PackedScene" uid="uid://v76yw6xit0ya" path="res://Scenes/ameba_player.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://bhynyvyo2b5qu" path="res://Scenes/ameba_blob.tscn" id="1_kry3j"]
+[ext_resource type="PackedScene" path="res://Scenes/ameba_blob.tscn" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cweao267oa60y" path="res://Scenes/Background.tscn" id="2_8gbba"]
-[ext_resource type="Script" path="res://Scripts/background.gd" id="3_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://ruriot5w34aa" path="res://Scenes/spawner_component.tscn" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://bkh7cy8217nig" path="res://Scripts/background.gd" id="3_jjvhh"]
+[ext_resource type="PackedScene" path="res://Scenes/spawner_component.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cafw0njeulctk" path="res://Scenes/Enemys/BaseEnemy/TestEnemy.tscn" id="6_21xkr"]
 
 [node name="Main" type="Node2D"]
 
 [node name="AmebaPlayer" parent="." instance=ExtResource("1_jjgbg")]
+scale = Vector2(0.3, 0.3)
 
 [node name="Background" parent="." instance=ExtResource("2_8gbba")]
-z_index = -1
 position = Vector2(-1440, -810)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("3_jjvhh")

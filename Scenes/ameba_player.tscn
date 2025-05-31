@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://v76yw6xit0ya"]
+[gd_scene load_steps=7 format=3 uid="uid://v76yw6xit0ya"]
 
 [ext_resource type="Texture2D" uid="uid://cyi56ypp3t22r" path="res://Textures/Amoeba.png" id="1_ada53"]
 [ext_resource type="PackedScene" uid="uid://ccx04f54j1bka" path="res://Scenes/player_component.tscn" id="2_1pgcd"]
@@ -6,82 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://4l10alvui00w" path="res://Scenes/health.tscn" id="4_gh438"]
 [ext_resource type="PackedScene" uid="uid://6xylpf7hnlfk" path="res://Scenes/experience_handler.tscn" id="5_ada53"]
 
-[sub_resource type="Animation" id="Animation_ada53"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_jbmmg"]
-resource_name = "idle"
-length = 2.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.26667, 2.5),
-"transitions": PackedFloat32Array(0.392292, 0.392292, 0.392292),
-"update": 0,
-"values": [Vector2(0.43, 0.43), Vector2(0.47, 0.47), Vector2(0.43, 0.43)]
-}
-
-[sub_resource type="Animation" id="Animation_gh438"]
-resource_name = "move"
-length = 2.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4),
-"transitions": PackedFloat32Array(0.329877, 3.24901, 0.210224, 2.92817, 0.287175),
-"update": 0,
-"values": [Vector2(0.43, 0.43), Vector2(0.6, 0.43), Vector2(0.43, 0.43), Vector2(0.23, 0.43), Vector2(0.43, 0.43)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_x1s3d"]
-_data = {
-&"RESET": SubResource("Animation_ada53"),
-&"idle": SubResource("Animation_jbmmg"),
-&"move": SubResource("Animation_gh438")
-}
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_jbmmg"]
 radius = 71.0
 
 [node name="AmebaPlayer" type="CharacterBody2D"]
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-position = Vector2(13, -14)
+position = Vector2(70, -70)
 texture = ExtResource("1_ada53")
 offset = Vector2(-13, 14)
 
-[node name="PlayerComponent" parent="." node_paths=PackedStringArray("camera", "player", "animationPlayer") instance=ExtResource("2_1pgcd")]
+[node name="PlayerComponent" parent="." node_paths=PackedStringArray("camera", "player") instance=ExtResource("2_1pgcd")]
 camera = NodePath("../CameraComponent")
 player = NodePath("..")
-animationPlayer = NodePath("../AnimationPlayer")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_x1s3d")
-}
-autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jbmmg")
