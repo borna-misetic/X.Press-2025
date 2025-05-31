@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmtw4icw5rf0f"]
+
+[ext_resource type="Texture2D" uid="uid://cvq3n7qo86jqq" path="res://Textures/ameba_start.png" id="1_cvchd"]
+[ext_resource type="Script" uid="uid://dpayl8i0njto1" path="res://Scenes/EyeCandy/ghost_sprite/ghost_sprite.gd" id="1_iabj1"]
+
+[node name="PlayerGhostSprite" type="Sprite2D"]
+texture = ExtResource("1_cvchd")
+script = ExtResource("1_iabj1")
+metadata/_custom_type_script = "uid://dpayl8i0njto1"
