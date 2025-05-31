@@ -5,10 +5,12 @@ var start_idle = false;
 
 func _ready() -> void:
 	enemy_brain.view_radius.body_exited.connect(on_body_exited);
+	enemy_brain.view_radius.body_entered.connect(body_entered);
 
+	
 func Enter():
 	start_idle = false;
-
+	get_parent().get_parent().body.modulate = Color(1,0,1);
 
 
 func Exit():
@@ -36,8 +38,11 @@ func _on_loose_sight_timeout() -> void:
 
 func look_at_player():
 	enemy_brain.body.look_at(PlayerGlobal.player.global_position);
-
+	
 func check_idle():
 	if start_idle == true:
 		state_transition.emit(self, "idle");
-		
+
+func body_entered(body : Node2D):
+	if body == PlayerGlobal.player:
+		loose_sight.stop();

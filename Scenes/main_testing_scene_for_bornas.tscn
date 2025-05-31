@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://v2agcrbl7s6r"]
+
+[ext_resource type="PackedScene" uid="uid://v76yw6xit0ya" path="res://Scenes/ameba_player.tscn" id="1_0ckc4"]
+[ext_resource type="PackedScene" uid="uid://cweao267oa60y" path="res://Scenes/Background.tscn" id="2_g4mvs"]
+[ext_resource type="Script" uid="uid://bkh7cy8217nig" path="res://Scripts/background.gd" id="3_qu8yy"]
+[ext_resource type="PackedScene" uid="uid://ruriot5w34aa" path="res://Scenes/spawner_component.tscn" id="4_tsgkl"]
+[ext_resource type="PackedScene" uid="uid://bhynyvyo2b5qu" path="res://Scenes/ameba_blob.tscn" id="5_rutjs"]
+[ext_resource type="PackedScene" uid="uid://cafw0njeulctk" path="res://Scenes/Enemys/BaseEnemy/TestEnemy.tscn" id="6_jmgq6"]
+[ext_resource type="Texture2D" uid="uid://cwr63fnclnbys" path="res://Textures/IMG_20240606_164826975_HDR.jpg" id="8_tsgkl"]
+[ext_resource type="PackedScene" uid="uid://eh6x3dh0iwr3" path="res://Scenes/HurtBox.tscn" id="9_rutjs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmgq6"]
+size = Vector2(25, 25)
+
+[node name="Main" type="Node2D"]
+
+[node name="AmebaPlayer" parent="." instance=ExtResource("1_0ckc4")]
+scale = Vector2(0.3, 0.3)
+
+[node name="Background" parent="." instance=ExtResource("2_g4mvs")]
+position = Vector2(-1440, -810)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("3_qu8yy")
+
+[node name="SpawnerComponent" parent="." node_paths=PackedStringArray("player", "world", "timer") instance=ExtResource("4_tsgkl")]
+spawnableCurrency = ExtResource("5_rutjs")
+spawnableEnemy = ExtResource("6_jmgq6")
+player = NodePath("../AmebaPlayer")
+world = NodePath("..")
+timer = NodePath("../GODISCOMING")
+
+[node name="GODISCOMING" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-141, 9)
+scale = Vector2(0.0181781, 0.0132761)
+texture = ExtResource("8_tsgkl")
+
+[node name="HurtBox" parent="." node_paths=PackedStringArray("hurt_area") instance=ExtResource("9_rutjs")]
+hurt_area = NodePath("../Hurt")
+
+[node name="Hurt" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt"]
+position = Vector2(-142.5, 7.5)
+shape = SubResource("RectangleShape2D_jmgq6")

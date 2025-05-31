@@ -5,4 +5,8 @@
 [node name="Health" type="Node2D"]
 script = ExtResource("1_1nx07")
 
+[node name="Kuldaun" type="Timer" parent="."]
+wait_time = 0.666
+
 [connection signal="died" from="." to="." method="_on_died"]
+[connection signal="timeout" from="Kuldaun" to="." method="_on_kuldaun_timeout"]

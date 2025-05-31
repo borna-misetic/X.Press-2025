@@ -14,3 +14,14 @@ flip_h = true
 
 [node name="barrel" type="Marker2D" parent="."]
 position = Vector2(-38, -35)
+
+[node name="shooting" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="kuldoun" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="shooting" to="." method="_on_shooting_timeout"]
+[connection signal="timeout" from="kuldoun" to="." method="_on_kuldoun_timeout"]

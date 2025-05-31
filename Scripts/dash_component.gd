@@ -23,7 +23,7 @@ func apply_dash():
 func add_ghost():
 	var ghost = ghost_node.instantiate()
 	#ALERT Nest tu nebu stimalo
-	ghost.set_property(body.position, body.scale * 2, body.rotation)
+	ghost.set_property(body.position, body.scale * 1, body.rotation)
 	get_tree().current_scene.add_child(ghost)
 
 
