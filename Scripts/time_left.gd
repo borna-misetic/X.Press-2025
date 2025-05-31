@@ -11,7 +11,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (done == false):
 		text = str(int(round($GODISCOMING.time_left)))
-		modulate = Color.RED
+		if (int(round($GODISCOMING.time_left)) < 11):
+			modulate = Color.RED
 	else: pass
 
 
