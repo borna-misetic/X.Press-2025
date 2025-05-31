@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://cg8jtcoalqrii"]
+
+[ext_resource type="PackedScene" uid="uid://v76yw6xit0ya" path="res://Scenes/ameba_player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://bhynyvyo2b5qu" path="res://Scenes/ameba_blob.tscn" id="1_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cweao267oa60y" path="res://Scenes/Background.tscn" id="2_8gbba"]
+[ext_resource type="Texture2D" uid="uid://cwj6o47tshe6l" path="res://Textures/Borna.jpg" id="2_bo1nx"]
+[ext_resource type="Script" path="res://Scripts/background.gd" id="3_jjvhh"]
+
+[node name="Main" type="Node2D"]
+
+[node name="AmebaBlob" parent="." instance=ExtResource("1_kry3j")]
+position = Vector2(257, 0)
+
+[node name="AmebaBlob2" parent="." instance=ExtResource("1_kry3j")]
+position = Vector2(246, -121)
+
+[node name="AmebaBlob3" parent="." instance=ExtResource("1_kry3j")]
+position = Vector2(66, 237)
+
+[node name="AmebaBlob4" parent="." instance=ExtResource("1_kry3j")]
+position = Vector2(-122, 222)
+
+[node name="AmebaBlob5" parent="." instance=ExtResource("1_kry3j")]
+position = Vector2(-238, 67)
+
+[node name="AmebaBlob6" parent="." instance=ExtResource("1_kry3j")]
+position = Vector2(-214, -139)
+
+[node name="AmebaBlob7" parent="." instance=ExtResource("1_kry3j")]
+position = Vector2(70, -131)
+
+[node name="AmebaBlob8" parent="." instance=ExtResource("1_kry3j")]
+position = Vector2(-68, -201)
+
+[node name="AmebaBlob9" parent="." instance=ExtResource("1_kry3j")]
+position = Vector2(-162, -47)
+
+[node name="AmebaBlob10" parent="." instance=ExtResource("1_kry3j")]
+position = Vector2(-321, -40)
+
+[node name="AmebaBlob11" parent="." instance=ExtResource("1_kry3j")]
+position = Vector2(-271, 180)
+
+[node name="AmebaBlob12" parent="." instance=ExtResource("1_kry3j")]
+position = Vector2(-31, 295)
+
+[node name="AmebaPlayer" parent="." instance=ExtResource("1_jjgbg")]
+
+[node name="Borna" type="Sprite2D" parent="."]
+position = Vector2(372, 256)
+texture = ExtResource("2_bo1nx")
+
+[node name="Background" parent="." instance=ExtResource("2_8gbba")]
+z_index = -1
+position = Vector2(-1440, -810)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("3_jjvhh")
