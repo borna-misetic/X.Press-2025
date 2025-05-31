@@ -22,3 +22,5 @@ func getExperience(experience : float):
 		upgradeComponent.updateExperienceBar(currentExperience, toNextLevel, level)
 		if (!upgradeComponent.upgradeShown):
 			upgradeComponent.showUpgrade()
+		if (!upgradeComponent.upgradeShownBIG and (level == 4 or level == 8 or level == 12)):
+			upgradeComponent.showUpgradeBIG()

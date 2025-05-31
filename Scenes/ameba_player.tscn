@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://6xylpf7hnlfk" path="res://Scenes/experience_handler.tscn" id="5_ada53"]
 [ext_resource type="PackedScene" uid="uid://h3jdas4d3j4h" path="res://Scenes/upgrade_component.tscn" id="6_x1s3d"]
 [ext_resource type="PackedScene" uid="uid://cj2kxni3xgmrl" path="res://Scenes/dash_component.tscn" id="7_05x1w"]
-[ext_resource type="PackedScene" uid="uid://dyoatirpi8vgm" path="res://Scenes/EyeCandy/ghost_sprite/player_ghost_sprite.tscn" id="8_ci70g"]
+[ext_resource type="PackedScene" uid="uid://dvr53mqowi2fo" path="res://Scenes/EyeCandy/ghost_sprite/player_ghost_sprite.tscn" id="8_ci70g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jbmmg"]
-radius = 166.003
+radius = 363.112
 
 [node name="AmebaPlayer" type="CharacterBody2D"]
 
@@ -52,3 +52,6 @@ upgradeComponent = NodePath("../CanvasLayer/Upgrade_component")
 experienceHanlder = NodePath("../../ExperienceHandler")
 healthComponent = NodePath("../../Health")
 playerComponent = NodePath("../../PlayerComponent")
+
+[node name="Fart CD timer" type="Timer" parent="."]
+one_shot = true

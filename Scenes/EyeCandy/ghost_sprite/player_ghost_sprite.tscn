@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyoatirpi8vgm"]
+[gd_scene load_steps=3 format=3 uid="uid://dvr53mqowi2fo"]
 
 [ext_resource type="Texture2D" uid="uid://cyi56ypp3t22r" path="res://Textures/Amoeba.png" id="1_cvchd"]
 [ext_resource type="Script" uid="uid://dpayl8i0njto1" path="res://Scenes/EyeCandy/ghost_sprite/ghost_sprite.gd" id="1_iabj1"]
