@@ -5,7 +5,11 @@ extends Control
 @onready var sfxSlider = $SettingsPanel/HBoxContainer/VBoxContainer/HBoxContainer/SFXSlider
 @onready var musicSlider = $SettingsPanel/HBoxContainer/VBoxContainer/HBoxContainer2/MusicSlider
 
+func _ready() -> void:
+	AudioManager.mainMenu.play()
+
 func _on_settings_button_pressed() -> void:
+	AudioManager.playMainMenu()
 	mainPanel.hide()
 	settingsPanel.show()
 
