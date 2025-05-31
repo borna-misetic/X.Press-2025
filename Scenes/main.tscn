@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4mjonxqe40lq"]
 
-[ext_resource type="PackedScene" path="res://Scenes/ameba_player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://66yey5wgghoi" path="res://Scenes/ameba_player.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://cwj6o47tshe6l" path="res://Textures/Borna.jpg" id="2_bo1nx"]
 
 [node name="Main" type="Node2D"]

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b5pn3mwga8sf5" path="res://Textures/ball.png" id="3_hcp8y"]
 [ext_resource type="Shader" uid="uid://buoki5ed4u14s" path="res://Shaders/Soup.gdshader" id="4_rqs8y"]
 [ext_resource type="Texture2D" uid="uid://cdxrt2nuqgfue" path="res://Textures/Swirl_01-512x512.png" id="5_vxnle"]
-[ext_resource type="Shader" uid="uid://yc1juobgft8k" path="res://Shaders/shader_test.gdshader" id="6_8sjso"]
+[ext_resource type="Shader" path="res://Shaders/shader_test.gdshader" id="6_8sjso"]
 
 [sub_resource type="Curve" id="Curve_o7gcj"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.507353, 0.0898877), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

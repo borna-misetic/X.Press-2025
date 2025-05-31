@@ -9,6 +9,6 @@ func _ready() -> void:
 
 
 func give_damage(body : Node2D):
-	var damaged_entity : Health = body.get_node("health");
+	var damaged_entity : Health = body.get_node("Health");
 	damaged_entity.take_damage(damage_amount);
 	
