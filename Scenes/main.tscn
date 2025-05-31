@@ -1,11 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4mjonxqe40lq"]
+[gd_scene load_steps=2 format=3 uid="uid://d4mjonxqe40lq"]
 
 [ext_resource type="Texture2D" uid="uid://cwj6o47tshe6l" path="res://Textures/Borna.jpg" id="1_jjgbg"]
-[ext_resource type="Shader" uid="uid://buoki5ed4u14s" path="res://Shaders/Soup.gdshader" id="2_8gbba"]
-[ext_resource type="Texture2D" uid="uid://b3bsk1jvng1a5" path="res://Textures/WhiteTestingTex.png" id="3_jjvhh"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kry3j"]
-shader = ExtResource("2_8gbba")
 
 [node name="Main" type="Node2D"]
 
@@ -13,9 +8,3 @@ shader = ExtResource("2_8gbba")
 visible = false
 position = Vector2(381, 243)
 texture = ExtResource("1_jjgbg")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_kry3j")
-scale = Vector2(76.8, 43.2)
-texture = ExtResource("3_jjvhh")
-centered = false

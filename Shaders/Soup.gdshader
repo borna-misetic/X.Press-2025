@@ -1,11 +1,12 @@
 shader_type canvas_item;
 
+uniform float speed = 0.1;
+uniform sampler2D existing_screen_texture : hint_screen_texture, filter_linear_mipmap;
 void vertex() {
-	// Called for every vertex the material is visible on.
+	UV.x += TIME*speed;
 }
 
 void fragment() {
-	// Called for every pixel the material is visible on.
 }
 
 //void light() {

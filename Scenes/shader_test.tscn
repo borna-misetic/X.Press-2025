@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cweao267oa60y"]
+
+[ext_resource type="Shader" uid="uid://buoki5ed4u14s" path="res://Shaders/Soup.gdshader" id="1_wso2r"]
+[ext_resource type="Texture2D" uid="uid://cdxrt2nuqgfue" path="res://Textures/Swirl_01-512x512.png" id="2_w2ob4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mrmnq"]
+shader = ExtResource("1_wso2r")
+shader_parameter/speed = 0.1
+
+[node name="Shader test" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_mrmnq")
+position = Vector2(960, 540)
+scale = Vector2(3.75, 2.109)
+texture = ExtResource("2_w2ob4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.501961)
+texture_repeat = 2
+material = SubResource("ShaderMaterial_mrmnq")
+position = Vector2(960, 540)
+rotation = 3.14159
+scale = Vector2(3.75, 2.109)
+texture = ExtResource("2_w2ob4")
