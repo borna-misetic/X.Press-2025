@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://1rmyq1xls5ht"]
+
+[ext_resource type="FontFile" uid="uid://dmje0kblmalj4" path="res://Fonts/lato.heavy-italic.ttf" id="1_l0xik"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -801.0
+offset_top = 243.0
+offset_right = -34.0
+offset_bottom = 398.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_l0xik")
+theme_override_font_sizes/font_size = 128
+text = "GAME_NAME"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 259.0
+offset_top = 467.0
+offset_right = 659.0
+offset_bottom = 767.0
+scale = Vector2(1.5, 1.5)
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 300.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_l0xik")
+theme_override_font_sizes/font_size = 60
+text = "START"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_l0xik")
+theme_override_font_sizes/font_size = 60
+text = "START"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_l0xik")
+theme_override_font_sizes/font_size = 60
+text = "START"
