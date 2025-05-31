@@ -6,4 +6,4 @@ extends Control
 func updateExperienceBar(currentXP, nextLevelXP, level):
 	experienceBar.max_value = nextLevelXP
 	experienceBar.value = currentXP
-	levelIndicator.text = "LEVEL: " + level
+	levelIndicator.text = "LEVEL: " +  str(level)
