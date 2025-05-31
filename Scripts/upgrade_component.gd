@@ -3,6 +3,9 @@ extends Control
 var upgradeShown = false
 
 @export var experienceHanlder : Node
+@export var healthComponent : Health
+@export var playerComponent : Node2D
+
 @onready var experienceBar = $VBoxContainer/XPBarContainer/XPBar
 @onready var levelIndicator = $VBoxContainer/XPBarContainer/LevelIndicator
 @onready var animationPlayer = $AnimationPlayer
@@ -33,7 +36,7 @@ func updatePointsAvailable() -> void:
 
 func _on_upgrade_health_button_pressed() -> void:
 	experienceHandlerRoutine(healthLevelBar)
-
+	healthComponent.set_max_health()
 
 func _on_upgrade_damage_button_pressed() -> void:
 	experienceHandlerRoutine(damageLevelBar)
@@ -41,6 +44,7 @@ func _on_upgrade_damage_button_pressed() -> void:
 
 func _on_upgrade_speed_button_pressed() -> void:
 	experienceHandlerRoutine(speedLevelBar)
+	playerComponent.speedMultiplier += 0.35
 
 
 func experienceHandlerRoutine(bar : ProgressBar) -> void:
