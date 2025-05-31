@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ruriot5w34aa"]
+[gd_scene load_steps=2 format=3 uid="uid://ruriot5w34aa"]
 
 [ext_resource type="Script" uid="uid://d1allxdoh1pux" path="res://spawner_component.gd" id="1_r0lpx"]
-[ext_resource type="PackedScene" uid="uid://bhynyvyo2b5qu" path="res://Scenes/ameba_blob.tscn" id="2_rw6c7"]
 
 [node name="SpawnerComponent" type="Node"]
 script = ExtResource("1_r0lpx")
-spawnableLUT = Array[PackedScene]([ExtResource("2_rw6c7")])
