@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0y5o3ptt87uo"]
+[gd_scene load_steps=10 format=3 uid="uid://66yey5wgghoi"]
 
 [ext_resource type="Texture2D" uid="uid://cvq3n7qo86jqq" path="res://Textures/ameba_start.png" id="1_b5iwm"]
 [ext_resource type="PackedScene" uid="uid://ccx04f54j1bka" path="res://Scenes/player_component.tscn" id="2_1pgcd"]
