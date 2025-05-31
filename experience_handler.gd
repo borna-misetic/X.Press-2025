@@ -17,3 +17,4 @@ func getExperience(experience : float):
 		level += 1
 		toNextLevel += level * RATE_OF_CHANGE
 		upgradeComponent.updateExperienceBar(currentExperience, toNextLevel, level)
+		

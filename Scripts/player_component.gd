@@ -4,6 +4,8 @@ extends Node
 @export var player : CharacterBody2D
 @export var speed := 500
 @export var playerSprite := Sprite2D
+@export var dashUpgrade : Node2D
+
 var time : float
 
 func _ready() -> void:
@@ -18,3 +20,5 @@ func _physics_process(delta: float) -> void:
 	playerSprite.scale.x = 2+sin(time*3)*0.15
 	playerSprite.scale.y = 2+sin(time*3)*0.15
 	player.move_and_slide()
+	if Input.is_action_just_pressed("dash"):
+		dashUpgrade.apply_dash()
