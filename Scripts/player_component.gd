@@ -6,6 +6,7 @@ extends Node
 @export var playerSprite := CharacterBody2D
 @export var dashUpgrade : Node2D
 @onready var FartScene = load("res://Scenes/acid_fart.tscn")
+@onready var upgradeComponent = $"../CanvasLayer/Upgrade_component"
 
 var time : float
 var speedMultiplier = 1.0
@@ -22,9 +23,9 @@ func _physics_process(delta: float) -> void:
 	playerSprite.scale.x = 0.5+sin(time*3)*0.05
 	playerSprite.scale.y = 0.5+sin(time*3)*0.05
 	player.move_and_slide()
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and upgradeComponent.DashUnlocked==true :
 		dashUpgrade.apply_dash()
-	if Input.is_action_just_pressed("Fart") and $"../Fart CD timer".is_stopped():
+	if Input.is_action_just_pressed("Fart") and $"../Fart CD timer".is_stopped() and upgradeComponent.CloudUnlocked==true:
 		var FartInst = FartScene.instantiate()
 		FartInst.global_position = player.position
 		get_tree().root.add_child(FartInst)

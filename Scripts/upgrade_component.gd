@@ -1,6 +1,11 @@
 extends Control
 
 var upgradeShown = false
+var upgradeShownBIG = false
+
+var DashUnlocked := false
+var SpitUnlocked := false
+var CloudUnlocked := false
 
 @export var experienceHanlder : Node
 @export var healthComponent : Health
@@ -14,6 +19,9 @@ var upgradeShown = false
 @onready var speedLevelBar = $"HBoxContainer/Upgrade panel/Rows/Speed/Panel/SpeedProgressBar"
 @onready var pointsAvailable = $"HBoxContainer/Upgrade panel/Rows/PointsAvailable"
 
+#func _ready() -> void:
+	#$BigUpgradePanel/BigEvolvePlay.play("BigEvolve")
+
 func updateExperienceBar(currentXP, nextLevelXP, level):
 	experienceBar.max_value = nextLevelXP
 	experienceBar.value = currentXP
@@ -23,6 +31,21 @@ func showUpgrade():
 	if(!upgradeShown):
 		animationPlayer.play("slide_in")
 		upgradeShown = true
+
+func showUpgradeBIG():
+	if(!upgradeShownBIG):
+		$BigUpgradePanel/BigEvolvePlay.play("BigEvolve")
+		if (DashUnlocked==false):
+			$BigUpgradePanel/Rows/HBoxContainer/TextureRect/DASH.disabled=false
+		if (SpitUnlocked==false):
+			$BigUpgradePanel/Rows/HBoxContainer/TextureRect2/SPIT.disabled=false
+		if (CloudUnlocked==false):
+			$BigUpgradePanel/Rows/HBoxContainer/TextureRect3/CLOUD.disabled=false
+		upgradeShownBIG = true
+
+func hideUpgradeBIG():
+	$BigUpgradePanel/BigEvolvePlay.play_backwards("BigEvolve")
+	upgradeShownBIG = false
 
 func hideUpgrade():
 	animationPlayer.play("slide_out")
@@ -52,3 +75,27 @@ func experienceHandlerRoutine(bar : ProgressBar) -> void:
 			bar.value += 1
 			experienceHanlder.pointsAvailable -= 1
 			updatePointsAvailable()
+
+
+func _on_dash_pressed() -> void:
+	DashUnlocked=true
+	$BigUpgradePanel/Rows/HBoxContainer/TextureRect/DASH.disabled=true
+	$BigUpgradePanel/Rows/HBoxContainer/TextureRect2/SPIT.disabled=true
+	$BigUpgradePanel/Rows/HBoxContainer/TextureRect3/CLOUD.disabled=true
+	hideUpgradeBIG()
+
+
+func _on_spit_pressed() -> void:
+	SpitUnlocked=true
+	$BigUpgradePanel/Rows/HBoxContainer/TextureRect/DASH.disabled=true
+	$BigUpgradePanel/Rows/HBoxContainer/TextureRect2/SPIT.disabled=true
+	$BigUpgradePanel/Rows/HBoxContainer/TextureRect3/CLOUD.disabled=true
+	hideUpgradeBIG()
+
+
+func _on_cloud_pressed() -> void:
+	CloudUnlocked=true
+	$BigUpgradePanel/Rows/HBoxContainer/TextureRect/DASH.disabled=true
+	$BigUpgradePanel/Rows/HBoxContainer/TextureRect2/SPIT.disabled=true
+	$BigUpgradePanel/Rows/HBoxContainer/TextureRect3/CLOUD.disabled=true
+	hideUpgradeBIG()

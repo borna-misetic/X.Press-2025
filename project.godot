@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [autoload]
 
 PlayerGlobal="*res://Scripts/playerGlobal.gd"
+AudioManager="*res://Scenes/audio_manager.gd"
 
 [display]
 

@@ -1,7 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://h3jdas4d3j4h"]
+[gd_scene load_steps=29 format=3 uid="uid://h3jdas4d3j4h"]
 
 [ext_resource type="FontFile" uid="uid://dmje0kblmalj4" path="res://Fonts/lato.heavy-italic.ttf" id="1_6wwle"]
 [ext_resource type="Script" uid="uid://bwtnxptmbdlcm" path="res://Scripts/upgrade_component.gd" id="1_u60rl"]
+[ext_resource type="Texture2D" uid="uid://bax0hg4tkerc" path="res://Textures/smoke.png" id="3_rf76u"]
+[ext_resource type="Texture2D" uid="uid://es5gwkrxvvlc" path="res://Textures/Modules/Spit3.png" id="4_chs1m"]
+[ext_resource type="Texture2D" uid="uid://btf3mfro3vtj0" path="res://Textures/Modules/CloudCe.png" id="5_hrael"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u60rl"]
 bg_color = Color(0.200195, 0.495826, 0.251511, 1)
@@ -14,6 +17,85 @@ bg_color = Color(0.164706, 0.172549, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rrwk"]
 bg_color = Color(1, 1, 0.0941176, 1)
+
+[sub_resource type="Gradient" id="Gradient_2rrwk"]
+colors = PackedColorArray(0.291904, 0.235395, 0.0429164, 1, 0.964614, 0.768344, 0.379149, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_utsfa"]
+gradient = SubResource("Gradient_2rrwk")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_u60rl"]
+interpolation_mode = 2
+colors = PackedColorArray(0, 0, 0.831373, 1, 0.663026, 0.679783, 0.926761, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2rrwk"]
+gradient = SubResource("Gradient_u60rl")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rf76u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chs1m"]
+bg_color = Color(0, 0, 0, 0.301961)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ym3e"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_legc6"]
+
+[sub_resource type="Gradient" id="Gradient_chs1m"]
+interpolation_mode = 2
+colors = PackedColorArray(0.732547, 0.0708686, 0.114261, 1, 0.984113, 0.688637, 0.886071, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hrael"]
+gradient = SubResource("Gradient_chs1m")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_5ym3e"]
+interpolation_mode = 2
+colors = PackedColorArray(0.588081, 0.466439, 1.92523e-07, 1, 0.829424, 0.980215, 0.522657, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_legc6"]
+gradient = SubResource("Gradient_5ym3e")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="Animation" id="Animation_rf76u"]
+resource_name = "BigEvolve"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.554785, 46.5387),
+"update": 0,
+"values": [Vector2(-563, 264.84), Vector2(679, 264.84)]
+}
+
+[sub_resource type="Animation" id="Animation_chs1m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-563, 360)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hrael"]
+_data = {
+&"BigEvolve": SubResource("Animation_rf76u"),
+&"RESET": SubResource("Animation_chs1m")
+}
 
 [sub_resource type="Animation" id="Animation_utsfa"]
 length = 0.001
@@ -343,6 +425,233 @@ size_flags_horizontal = 2
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 
+[node name="BigUpgradePanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 2
+offset_left = -563.0
+offset_top = 264.84
+offset_right = -1.0
+offset_bottom = 740.84
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="BigUpgradePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_utsfa")
+
+[node name="Rows" type="VBoxContainer" parent="BigUpgradePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="BigUpgradePanel/Rows"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="PointsAvailable" type="Label" parent="BigUpgradePanel/Rows"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_6wwle")
+theme_override_font_sizes/font_size = 26
+text = "EVOLVE!!!!!"
+
+[node name="MarginContainer" type="MarginContainer" parent="BigUpgradePanel/Rows"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BigUpgradePanel/Rows"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="BigUpgradePanel/Rows/HBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BigUpgradePanel/Rows/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("GradientTexture2D_2rrwk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 43)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6wwle")
+theme_override_font_sizes/font_size = 35
+text = "DASH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("3_rf76u")
+expand_mode = 1
+
+[node name="DASH" type="Button" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rf76u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chs1m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5ym3e")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_legc6")
+disabled = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="BigUpgradePanel/Rows/HBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="BigUpgradePanel/Rows/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("GradientTexture2D_hrael")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect2/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 43)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6wwle")
+theme_override_font_sizes/font_size = 35
+text = "SPIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect2/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect2/VBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("4_chs1m")
+expand_mode = 1
+
+[node name="SPIT" type="Button" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rf76u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chs1m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5ym3e")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_legc6")
+disabled = true
+
+[node name="MarginContainer4" type="MarginContainer" parent="BigUpgradePanel/Rows/HBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="BigUpgradePanel/Rows/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("GradientTexture2D_legc6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect3/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect3/VBoxContainer"]
+custom_minimum_size = Vector2(0, 43)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6wwle")
+theme_override_font_sizes/font_size = 35
+text = "CLOUD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect3/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect3/VBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("5_hrael")
+expand_mode = 1
+
+[node name="CLOUD" type="Button" parent="BigUpgradePanel/Rows/HBoxContainer/TextureRect3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rf76u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_chs1m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5ym3e")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_legc6")
+disabled = true
+
+[node name="MarginContainer5" type="MarginContainer" parent="BigUpgradePanel/Rows/HBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="BigUpgradePanel/Rows"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="MarginContainer5" type="MarginContainer" parent="BigUpgradePanel/Rows"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="BigEvolvePlay" type="AnimationPlayer" parent="BigUpgradePanel"]
+libraries = {
+&"": SubResource("AnimationLibrary_hrael")
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_rf76u")
@@ -351,3 +660,6 @@ libraries = {
 [connection signal="pressed" from="HBoxContainer/Upgrade panel/Rows/Health/UpgradeHealthButton" to="." method="_on_upgrade_health_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Upgrade panel/Rows/Damage/UpgradeDamageButton" to="." method="_on_upgrade_damage_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Upgrade panel/Rows/Speed/UpgradeSpeedButton" to="." method="_on_upgrade_speed_button_pressed"]
+[connection signal="pressed" from="BigUpgradePanel/Rows/HBoxContainer/TextureRect/DASH" to="." method="_on_dash_pressed"]
+[connection signal="pressed" from="BigUpgradePanel/Rows/HBoxContainer/TextureRect2/SPIT" to="." method="_on_spit_pressed"]
+[connection signal="pressed" from="BigUpgradePanel/Rows/HBoxContainer/TextureRect3/CLOUD" to="." method="_on_cloud_pressed"]
