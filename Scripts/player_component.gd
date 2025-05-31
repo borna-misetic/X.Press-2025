@@ -3,7 +3,7 @@ extends Node
 @export var camera : Camera2D
 @export var player : CharacterBody2D
 @export var speed := 500
-@export var playerSprite := Sprite2D
+@export var playerSprite := CharacterBody2D
 @export var dashUpgrade : Node2D
 @onready var FartScene = load("res://Scenes/acid_fart.tscn")
 @onready var upgradeComponent = $"../CanvasLayer/Upgrade_component"
@@ -20,8 +20,8 @@ func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var inertiaVelocity = Vector2(move_toward(player.velocity.x, direction.x * speed * speedMultiplier, delta * 750 * speedMultiplier),move_toward(player.velocity.y, direction.y * speed * speedMultiplier, delta * 750 * speedMultiplier))
 	player.velocity = inertiaVelocity
-	playerSprite.scale.x = 2+sin(time*3)*0.15
-	playerSprite.scale.y = 2+sin(time*3)*0.15
+	playerSprite.scale.x = 0.5+sin(time*3)*0.05
+	playerSprite.scale.y = 0.5+sin(time*3)*0.05
 	player.move_and_slide()
 	if Input.is_action_just_pressed("dash") and upgradeComponent.DashUnlocked==true :
 		dashUpgrade.apply_dash()

@@ -10,4 +10,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	time += delta
 	rotation = deg_to_rad(remap(sin(time*10),-1,1,-20,20))+deg_to_rad(90)
-	print(rotation)
+	#print(rotation)

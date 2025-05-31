@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://v76yw6xit0ya"]
+[gd_scene load_steps=13 format=3 uid="uid://v76yw6xit0ya"]
 
 [ext_resource type="Texture2D" uid="uid://cyi56ypp3t22r" path="res://Textures/Amoeba.png" id="1_ada53"]
 [ext_resource type="PackedScene" uid="uid://ccx04f54j1bka" path="res://Scenes/player_component.tscn" id="2_1pgcd"]
@@ -8,9 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://h3jdas4d3j4h" path="res://Scenes/upgrade_component.tscn" id="6_x1s3d"]
 [ext_resource type="PackedScene" uid="uid://cj2kxni3xgmrl" path="res://Scenes/dash_component.tscn" id="7_05x1w"]
 [ext_resource type="PackedScene" uid="uid://dvr53mqowi2fo" path="res://Scenes/EyeCandy/ghost_sprite/player_ghost_sprite.tscn" id="8_ci70g"]
+[ext_resource type="PackedScene" uid="uid://bll45vtkjlj05" path="res://Scenes/Health bar.tscn" id="8_wq8bw"]
+[ext_resource type="PackedScene" uid="uid://yqllr5qhgisb" path="res://Scenes/Weapons/cell_stage/acid_spit/double_acid_shooter.tscn" id="10_wq8bw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jbmmg"]
 radius = 363.112
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05x1w"]
+radius = 130.465
 
 [node name="AmebaPlayer" type="CharacterBody2D"]
 
@@ -24,9 +29,10 @@ texture = ExtResource("1_ada53")
 offset = Vector2(-13, 14)
 
 [node name="PlayerComponent" parent="." node_paths=PackedStringArray("camera", "player", "playerSprite", "dashUpgrade") instance=ExtResource("2_1pgcd")]
+position = Vector2(-4, 1)
 camera = NodePath("../CameraComponent")
 player = NodePath("..")
-playerSprite = NodePath("../PlayerSprite")
+playerSprite = NodePath("..")
 dashUpgrade = NodePath("../DashComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -38,7 +44,7 @@ lerpScale = 7.0
 moveScale = 0.2
 
 [node name="Health" parent="." node_paths=PackedStringArray("entity") instance=ExtResource("4_gh438")]
-entity = NodePath("..")
+entity = NodePath("../Hearth")
 
 [node name="ExperienceHandler" parent="." node_paths=PackedStringArray("player", "upgradeComponent") instance=ExtResource("5_ada53")]
 player = NodePath("..")
@@ -53,5 +59,21 @@ experienceHanlder = NodePath("../../ExperienceHandler")
 healthComponent = NodePath("../../Health")
 playerComponent = NodePath("../../PlayerComponent")
 
+[node name="HealthBar" parent="CanvasLayer" node_paths=PackedStringArray("MortalsHealth", "ItFollows", "Camera") instance=ExtResource("8_wq8bw")]
+MortalsHealth = NodePath("../../Health")
+ItFollows = NodePath("../..")
+Camera = NodePath("../../CameraComponent")
+
 [node name="Fart CD timer" type="Timer" parent="."]
+wait_time = 5.0
 one_shot = true
+
+[node name="DoubleAcidShooter" parent="." instance=ExtResource("10_wq8bw")]
+position = Vector2(107, 25)
+rotation = -4.38927
+scale = Vector2(1.5, 1)
+
+[node name="Hearth" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hearth"]
+shape = SubResource("CircleShape2D_05x1w")

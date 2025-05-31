@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cafw0njeulctk" path="res://Scenes/Enemys/BaseEnemy/TestEnemy.tscn" id="4_ybium"]
 [ext_resource type="PackedScene" uid="uid://tx6myed6ys5w" path="res://Scenes/EyeCandy/ghost_sprite/ghost_sprite.tscn" id="5_ocw4n"]
 [ext_resource type="Texture2D" uid="uid://cvq3n7qo86jqq" path="res://Textures/ameba_start.png" id="6_nuoc8"]
-[ext_resource type="PackedScene" path="res://Scenes/dash_component.tscn" id="7_i5ue6"]
-[ext_resource type="PackedScene" path="res://Scenes/EyeCandy/ghost_sprite/player_ghost_sprite.tscn" id="8_6dhwj"]
+[ext_resource type="PackedScene" uid="uid://dffic8yquuq0a" path="res://Scenes/dash_component.tscn" id="7_i5ue6"]
+[ext_resource type="PackedScene" uid="uid://dyoatirpi8vgm" path="res://Scenes/EyeCandy/ghost_sprite/player_ghost_sprite.tscn" id="8_6dhwj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3iira"]
 radius = 48.0416

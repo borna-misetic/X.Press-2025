@@ -5,11 +5,11 @@ extends Node2D
 
 
 func _ready() -> void:
-	hurt_area.body_entered.connect(give_damage);
+	hurt_area.area_entered.connect(give_damage);
 
 
-func give_damage(body : Node2D):
-	var damaged_entity : Health = body.get_node("Health");
+func give_damage(area : Area2D):
+	var damaged_entity = area.get_parent().get_node("Health");
 	if damaged_entity != null:
 		damaged_entity.take_damage(damage_amount);
 	

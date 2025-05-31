@@ -1,13 +1,13 @@
 extends Node2D
 class_name Health;
 
-@export var entity : Node2D;
+@export var entity : Area2D;
+@onready var kuldaun: Timer = $Kuldaun
 
 
 @export var max_health : int = 6;
 var current_health : int;
 @export var imortality : bool = false;
-
 
 
 signal took_damage(amount : int);
@@ -17,12 +17,19 @@ signal died();
 
 func _ready() -> void:
 	current_health = max_health;
+	#print(entity)
 
 func take_damage(amount: int):
 	if imortality:
-		print("Ako se pitas zasto ne dobivam damage, e pa imortal sam");
+		#print("Ako se pitas zasto ne dobivam damage, e pa imortal sam");
 		return
-	print("Daren sam");
+		
+	#print(entity)	
+	imortality = true;
+	entity.set_deferred("monitoring", false)	
+	kuldaun.start();
+	
+	#print("Daren sam");
 	current_health -= amount;
 	clamp_health();
 	took_damage.emit(amount);
@@ -42,3 +49,8 @@ func set_max_health():
 
 func _on_died() -> void:
 	print("Ljudi mrtav sam");
+
+
+func _on_kuldaun_timeout() -> void:
+	imortality = false;
+	entity.set_deferred("monitoring", true)
