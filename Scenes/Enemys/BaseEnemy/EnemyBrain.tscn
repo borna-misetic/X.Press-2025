@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cctoqlo1g7qhv"]
+
+[ext_resource type="Script" uid="uid://ckhx3gknl8urs" path="res://Scripts/StateMachineStuff/FSM.gd" id="1_4dr6t"]
+[ext_resource type="Script" uid="uid://ugonofjbscqj" path="res://Scenes/Enemys/BaseEnemy/enemy_brain.gd" id="1_k5ync"]
+[ext_resource type="Script" uid="uid://bxktjejcj8dm6" path="res://Scenes/Enemys/BaseEnemy/States/idle.gd" id="2_k5ync"]
+[ext_resource type="Script" uid="uid://mdj46wqucxbk" path="res://Scenes/Enemys/BaseEnemy/States/follow.gd" id="4_k5ync"]
+
+[node name="EnemyBrain" type="Node2D"]
+script = ExtResource("1_k5ync")
+
+[node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state", "initial_state")]
+script = ExtResource("1_4dr6t")
+current_state = NodePath("idle")
+initial_state = NodePath("idle")
+metadata/_custom_type_script = "uid://ckhx3gknl8urs"
+
+[node name="idle" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("2_k5ync")
+metadata/_custom_type_script = "uid://ba73lv55gvj7i"
+
+[node name="follow" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("4_k5ync")
+metadata/_custom_type_script = "uid://ba73lv55gvj7i"
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="wander" type="Timer" parent="Timers"]
+wait_time = 5.0
+autostart = true
+
+[node name="loose_sight" type="Timer" parent="Timers"]
+wait_time = 4.0
+
+[connection signal="timeout" from="Timers/wander" to="FiniteStateMachine/idle" method="_on_wander_timeout"]
+[connection signal="timeout" from="Timers/loose_sight" to="FiniteStateMachine/follow" method="_on_loose_sight_timeout"]

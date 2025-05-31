@@ -6,7 +6,7 @@ extends Node
 @export var animationPlayer : AnimationPlayer
 
 func _ready() -> void:
-	pass
+	PlayerGlobal.register_player(player);
 	
 func _physics_process(delta: float) -> void:
 	player.look_at(camera.get_global_mouse_position())

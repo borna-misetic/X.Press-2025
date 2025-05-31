@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnd4ls4ii155v"]
+[gd_scene load_steps=7 format=3 uid="uid://d0qocpdv61p5o"]
 
 [ext_resource type="Script" uid="uid://ckhx3gknl8urs" path="res://Scripts/StateMachineStuff/FSM.gd" id="1_foulm"]
 [ext_resource type="Script" uid="uid://wj2y2o5bwp0o" path="res://Scripts/StateMachineStuff/States/idle_test.gd" id="2_fspdi"]
