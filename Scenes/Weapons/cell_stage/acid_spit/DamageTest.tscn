@@ -1,0 +1,52 @@
+[gd_scene load_steps=12 format=3 uid="uid://bgvxh73ilsgx6"]
+
+[ext_resource type="PackedScene" uid="uid://v76yw6xit0ya" path="res://Scenes/ameba_player.tscn" id="1_feh7u"]
+[ext_resource type="Texture2D" uid="uid://b5pn3mwga8sf5" path="res://Textures/ball.png" id="2_rbn4t"]
+[ext_resource type="PackedScene" uid="uid://eh6x3dh0iwr3" path="res://Scenes/HurtBox.tscn" id="3_2is8h"]
+[ext_resource type="PackedScene" uid="uid://cafw0njeulctk" path="res://Scenes/Enemys/BaseEnemy/TestEnemy.tscn" id="4_ybium"]
+[ext_resource type="PackedScene" uid="uid://tx6myed6ys5w" path="res://Scenes/EyeCandy/ghost_sprite/ghost_sprite.tscn" id="5_ocw4n"]
+[ext_resource type="Texture2D" uid="uid://cvq3n7qo86jqq" path="res://Textures/ameba_start.png" id="6_nuoc8"]
+[ext_resource type="PackedScene" uid="uid://dffic8yquuq0a" path="res://Scenes/dash_component.tscn" id="7_i5ue6"]
+[ext_resource type="PackedScene" uid="uid://bmtw4icw5rf0f" path="res://Scenes/EyeCandy/ghost_sprite/player_ghost_sprite.tscn" id="8_6dhwj"]
+[ext_resource type="PackedScene" uid="uid://b0emtjpvv7es5" path="res://Scenes/Weapons/cell_stage/acid_spit/acid_bullet.tscn" id="9_3a0nl"]
+[ext_resource type="PackedScene" uid="uid://lt53c2irva7" path="res://Scenes/Weapons/cell_stage/acid_spit/Shooter.tscn" id="9_rbn4t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3iira"]
+radius = 48.0416
+
+[node name="DamageTest" type="Node2D"]
+
+[node name="AmebaPlayer" parent="." instance=ExtResource("1_feh7u")]
+position = Vector2(307, 140)
+
+[node name="Shooter" parent="AmebaPlayer" instance=ExtResource("9_rbn4t")]
+position = Vector2(-1, 1)
+rotation = 1.5008
+bullet = ExtResource("9_3a0nl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Ball" type="Sprite2D" parent="."]
+position = Vector2(610, 139)
+texture = ExtResource("2_rbn4t")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(609, 139)
+shape = SubResource("CircleShape2D_3iira")
+
+[node name="HurtBox" parent="." node_paths=PackedStringArray("hurt_area") instance=ExtResource("3_2is8h")]
+hurt_area = NodePath("../Area2D")
+
+[node name="TestEnemy" parent="." instance=ExtResource("4_ybium")]
+position = Vector2(1360, 283)
+
+[node name="GhostSprite" parent="." instance=ExtResource("5_ocw4n")]
+position = Vector2(-800, 277)
+scale = Vector2(2.61047, 2.54281)
+texture = ExtResource("6_nuoc8")
+
+[node name="DashComponent" parent="." node_paths=PackedStringArray("body") instance=ExtResource("7_i5ue6")]
+body = NodePath("../AmebaPlayer")
+ghost_node = ExtResource("8_6dhwj")
