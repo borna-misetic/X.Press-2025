@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ccx04f54j1bka" path="res://Scenes/player_component.tscn" id="2_1pgcd"]
 [ext_resource type="PackedScene" uid="uid://bftqxpndtywmk" path="res://Scenes/camera_component.tscn" id="3_jbmmg"]
 [ext_resource type="PackedScene" uid="uid://4l10alvui00w" path="res://Scenes/health.tscn" id="4_gh438"]
-[ext_resource type="PackedScene" uid="uid://6xylpf7hnlfk" path="res://Scenes/experience_handler.tscn" id="5_ada53"]
+[ext_resource type="PackedScene" path="res://Scenes/experience_handler.tscn" id="5_ada53"]
 
 [sub_resource type="Animation" id="Animation_ada53"]
 length = 0.001
