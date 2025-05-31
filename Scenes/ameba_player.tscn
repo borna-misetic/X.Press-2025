@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cumub07fexsvk"]
+
+[ext_resource type="Texture2D" uid="uid://740y7gbq7ljb" path="res://Scripts/Borna.jpg" id="1_magvi"]
+[ext_resource type="PackedScene" uid="uid://b6x1ermp6suis" path="res://Scenes/player_component.tscn" id="2_1pgcd"]
+
+[node name="AmebaPlayer" type="CharacterBody2D"]
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_magvi")
+
+[node name="PlayerComponent" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_1pgcd")]
+player = NodePath("..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

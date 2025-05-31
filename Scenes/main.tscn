@@ -1,10 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d4mjonxqe40lq"]
 
-[ext_resource type="Texture2D" uid="uid://cwj6o47tshe6l" path="res://Textures/Borna.jpg" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://cumub07fexsvk" path="res://Scenes/ameba_player.tscn" id="1_jjgbg"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Borna" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(381, 243)
-texture = ExtResource("1_jjgbg")
+[node name="AmebaPlayer" parent="." instance=ExtResource("1_jjgbg")]
