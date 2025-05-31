@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dviegkl0gjp87"
+path="res://.godot/imported/THINK FAST CHUCKLENUTS.ogg-838a0977836e2ab5fa65c2df1d9ebaa5.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/SFX/THINK FAST CHUCKLENUTS.ogg"
+dest_files=["res://.godot/imported/THINK FAST CHUCKLENUTS.ogg-838a0977836e2ab5fa65c2df1d9ebaa5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
