@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d4mjonxqe40lq"]
 
-[ext_resource type="PackedScene" uid="uid://cumub07fexsvk" path="res://Scenes/ameba_player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" path="res://Scenes/ameba_player.tscn" id="1_jjgbg"]
 
 [node name="Main" type="Node2D"]
 
