@@ -2,6 +2,7 @@ extends Node
 class_name ExperienceHandler
 
 @export var player : CharacterBody2D
+@export var upgradeComponent : Control
 
 const RATE_OF_CHANGE := 1.5
 var level := 1
@@ -13,4 +14,4 @@ func getExperience(experience : float):
 	if(currentExperience > toNextLevel):
 		level += 1
 		toNextLevel += level * RATE_OF_CHANGE
-	print("level: ", level, " currentXP: ", currentExperience, "/", toNextLevel)
+		upgradeComponent.updateExperienceBar(currentExperience, toNextLevel, level)
