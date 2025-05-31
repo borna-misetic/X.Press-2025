@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://h3jdas4d3j4h"]
+[gd_scene load_steps=9 format=3 uid="uid://1uetr6rjdv4b"]
 
 [ext_resource type="FontFile" uid="uid://dmje0kblmalj4" path="res://Fonts/lato.heavy-italic.ttf" id="1_6wwle"]
-[ext_resource type="Script" uid="uid://bwtnxptmbdlcm" path="res://Scripts/upgrade_component.gd" id="1_u60rl"]
+[ext_resource type="Script" path="res://Scripts/upgrade_component.gd" id="1_u60rl"]
 
 [sub_resource type="Gradient" id="Gradient_t5hhx"]
 colors = PackedColorArray(1, 0.0431373, 0.0235294, 1, 0.999626, 0.0440696, 0.0244271, 1)

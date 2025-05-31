@@ -6,11 +6,14 @@ extends Node
 @export var spawnableEnemy : PackedScene
 @export var player : CharacterBody2D
 @export var world : Node2D
+@export var timer : Timer
 
 
 func _process(delta: float) -> void:
-	currencyTimer -= delta
-	enemyTimer -= delta
+	#print(enemyTimer)
+	if (not timer.is_stopped()):
+		currencyTimer -= delta
+		enemyTimer -= delta
 	if(player.velocity != Vector2.ZERO):
 		if(currencyTimer < 0):
 			currencyTimer = 0.2
