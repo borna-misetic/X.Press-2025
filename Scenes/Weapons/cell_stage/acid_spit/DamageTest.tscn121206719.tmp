@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgvxh73ilsgx6"]
+[gd_scene load_steps=12 format=3 uid="uid://bgvxh73ilsgx6"]
 
 [ext_resource type="PackedScene" uid="uid://v76yw6xit0ya" path="res://Scenes/ameba_player.tscn" id="1_feh7u"]
-[ext_resource type="PackedScene" uid="uid://yqllr5qhgisb" path="res://Scenes/Weapons/cell_stage/acid_spit/double_acid_shooter.tscn" id="2_feh7u"]
 [ext_resource type="Texture2D" uid="uid://b5pn3mwga8sf5" path="res://Textures/ball.png" id="2_rbn4t"]
 [ext_resource type="PackedScene" uid="uid://eh6x3dh0iwr3" path="res://Scenes/HurtBox.tscn" id="3_2is8h"]
 [ext_resource type="PackedScene" uid="uid://cafw0njeulctk" path="res://Scenes/Enemys/BaseEnemy/TestEnemy.tscn" id="4_ybium"]
@@ -9,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cvq3n7qo86jqq" path="res://Textures/ameba_start.png" id="6_nuoc8"]
 [ext_resource type="PackedScene" uid="uid://dffic8yquuq0a" path="res://Scenes/dash_component.tscn" id="7_i5ue6"]
 [ext_resource type="PackedScene" uid="uid://dyoatirpi8vgm" path="res://Scenes/EyeCandy/ghost_sprite/player_ghost_sprite.tscn" id="8_6dhwj"]
+[ext_resource type="PackedScene" uid="uid://b0emtjpvv7es5" path="res://Scenes/Weapons/cell_stage/acid_spit/acid_bullet.tscn" id="9_3a0nl"]
+[ext_resource type="PackedScene" uid="uid://lt53c2irva7" path="res://Scenes/Weapons/cell_stage/acid_spit/Shooter.tscn" id="9_rbn4t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3iira"]
 radius = 48.0416
@@ -18,9 +19,16 @@ radius = 48.0416
 [node name="AmebaPlayer" parent="." instance=ExtResource("1_feh7u")]
 position = Vector2(307, 140)
 
-[node name="DoubleAcidShooter" parent="AmebaPlayer" instance=ExtResource("2_feh7u")]
-position = Vector2(122, 30)
-rotation = 1.67807
+[node name="Shooter" parent="AmebaPlayer" instance=ExtResource("9_rbn4t")]
+position = Vector2(-72, 98)
+rotation = -1.38031
+bullet = ExtResource("9_3a0nl")
+
+[node name="Shooter2" parent="AmebaPlayer" instance=ExtResource("9_rbn4t")]
+position = Vector2(-57, -38)
+rotation = -7.84174
+scale = Vector2(-1, 1)
+bullet = ExtResource("9_3a0nl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
