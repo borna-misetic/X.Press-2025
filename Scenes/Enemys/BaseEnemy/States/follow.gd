@@ -3,10 +3,12 @@ var start_idle = false;
 @onready var enemy_brain: base_enemy_brain = $"../.."
 @onready var loose_sight: Timer = $"../../Timers/loose_sight"
 
+func _ready() -> void:
+	enemy_brain.view_radius.body_exited.connect(on_body_exited);
 
 func Enter():
 	start_idle = false;
-	enemy_brain.view_radius.body_exited.connect(on_body_exited);
+
 
 
 func Exit():
