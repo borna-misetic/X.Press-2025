@@ -48,4 +48,5 @@ upgradeComponent = NodePath("../CanvasLayer/Upgrade_component")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Upgrade_component" parent="CanvasLayer" instance=ExtResource("6_x1s3d")]
+[node name="Upgrade_component" parent="CanvasLayer" node_paths=PackedStringArray("experienceHanlder") instance=ExtResource("6_x1s3d")]
+experienceHanlder = NodePath("../../ExperienceHandler")

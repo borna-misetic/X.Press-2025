@@ -4,7 +4,7 @@ class_name Health;
 @export var entity : Node2D;
 
 
-@export var max_health : int = 5;
+@export var max_health : int = 6;
 var current_health : int;
 @export var imortality : bool = false;
 
@@ -34,11 +34,9 @@ func clamp_health():
 	current_health = clamp(current_health,0,max_health);
 
 
-func set_max_health(new_value : int):
-	if new_value < 1:
-		print("Wou wou wou stani malo max health ne moze ic ispod 1");
-	
-	max_health = new_value;
+
+func set_max_health():
+	max_health += 2;
 	changed_max_health.emit();
 
 

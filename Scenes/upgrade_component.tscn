@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://h3jdas4d3j4h"]
+[gd_scene load_steps=11 format=3 uid="uid://h3jdas4d3j4h"]
 
 [ext_resource type="FontFile" uid="uid://dmje0kblmalj4" path="res://Fonts/lato.heavy-italic.ttf" id="1_6wwle"]
 [ext_resource type="Script" uid="uid://bwtnxptmbdlcm" path="res://Scripts/upgrade_component.gd" id="1_u60rl"]
@@ -6,8 +6,14 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u60rl"]
 bg_color = Color(0.200195, 0.495826, 0.251511, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utsfa"]
+bg_color = Color(1, 0.156863, 0.141176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf76u"]
+bg_color = Color(0.164706, 0.172549, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rrwk"]
-bg_color = Color(1, 0.0980392, 0.0941176, 1)
+bg_color = Color(1, 1, 0.0941176, 1)
 
 [sub_resource type="Animation" id="Animation_u60rl"]
 resource_name = "slide_in"
@@ -153,7 +159,7 @@ offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/Upgrade panel/Rows"]
+[node name="PointsAvailable" type="Label" parent="HBoxContainer/Upgrade panel/Rows"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_6wwle")
@@ -195,8 +201,8 @@ offset_left = 3.0
 offset_top = 3.0
 offset_right = 163.0
 offset_bottom = 31.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_2rrwk")
-max_value = 5.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_utsfa")
+max_value = 6.0
 step = 1.0
 show_percentage = false
 
@@ -209,6 +215,7 @@ size_flags_horizontal = 8
 custom_minimum_size = Vector2(15, 34)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 text = "+"
 
 [node name="MarginContainer4" type="MarginContainer" parent="HBoxContainer/Upgrade panel/Rows/Health"]
@@ -251,8 +258,8 @@ offset_left = 3.0
 offset_top = 3.0
 offset_right = 163.0
 offset_bottom = 31.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_2rrwk")
-max_value = 5.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_rf76u")
+max_value = 6.0
 step = 1.0
 show_percentage = false
 
@@ -265,6 +272,7 @@ size_flags_horizontal = 8
 custom_minimum_size = Vector2(15, 34)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 text = "+"
 
 [node name="MarginContainer4" type="MarginContainer" parent="HBoxContainer/Upgrade panel/Rows/Damage"]
@@ -309,7 +317,7 @@ offset_top = 3.0
 offset_right = 163.0
 offset_bottom = 31.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_2rrwk")
-max_value = 5.0
+max_value = 6.0
 step = 1.0
 show_percentage = false
 
@@ -322,6 +330,7 @@ size_flags_horizontal = 8
 custom_minimum_size = Vector2(15, 34)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 text = "+"
 
 [node name="MarginContainer4" type="MarginContainer" parent="HBoxContainer/Upgrade panel/Rows/Speed"]
@@ -337,3 +346,7 @@ layout_mode = 2
 libraries = {
 &"": SubResource("AnimationLibrary_rf76u")
 }
+
+[connection signal="pressed" from="HBoxContainer/Upgrade panel/Rows/Health/UpgradeHealthButton" to="." method="_on_upgrade_health_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Upgrade panel/Rows/Damage/UpgradeDamageButton" to="." method="_on_upgrade_damage_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Upgrade panel/Rows/Speed/UpgradeSpeedButton" to="." method="_on_upgrade_speed_button_pressed"]
