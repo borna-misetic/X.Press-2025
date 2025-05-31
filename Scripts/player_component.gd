@@ -5,6 +5,7 @@ extends Node
 @export var speed := 500
 @export var playerSprite := Sprite2D
 @export var dashUpgrade : Node2D
+@onready var FartScene = load("res://Scenes/acid_fart.tscn")
 
 var time : float
 var speedMultiplier = 1.0
@@ -23,3 +24,8 @@ func _physics_process(delta: float) -> void:
 	player.move_and_slide()
 	if Input.is_action_just_pressed("dash"):
 		dashUpgrade.apply_dash()
+	if Input.is_action_just_pressed("Fart") and $"../Fart CD timer".is_stopped():
+		var FartInst = FartScene.instantiate()
+		FartInst.global_position = player.position
+		get_tree().root.add_child(FartInst)
+		$"../Fart CD timer".start()
