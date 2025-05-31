@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://v76yw6xit0ya"]
 
-[ext_resource type="Texture2D" uid="uid://cvq3n7qo86jqq" path="res://Textures/ameba_start.png" id="1_b5iwm"]
+[ext_resource type="Texture2D" uid="uid://cyi56ypp3t22r" path="res://Textures/Amoeba.png" id="1_ada53"]
 [ext_resource type="PackedScene" uid="uid://ccx04f54j1bka" path="res://Scenes/player_component.tscn" id="2_1pgcd"]
 [ext_resource type="PackedScene" uid="uid://bftqxpndtywmk" path="res://Scenes/camera_component.tscn" id="3_jbmmg"]
 [ext_resource type="PackedScene" uid="uid://4l10alvui00w" path="res://Scenes/health.tscn" id="4_gh438"]
@@ -35,7 +35,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.26667, 2.5),
 "transitions": PackedFloat32Array(0.392292, 0.392292, 0.392292),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1, 1)]
+"values": [Vector2(0.43, 0.43), Vector2(0.47, 0.47), Vector2(0.43, 0.43)]
 }
 
 [sub_resource type="Animation" id="Animation_gh438"]
@@ -50,9 +50,9 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4),
-"transitions": PackedFloat32Array(0.329877, 2.37841, 0.210224, 2.92817, 0.287175),
+"transitions": PackedFloat32Array(0.329877, 3.24901, 0.210224, 2.92817, 0.287175),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.2, 1), Vector2(1, 1), Vector2(0.8, 1), Vector2(1, 1)]
+"values": [Vector2(0.43, 0.43), Vector2(0.6, 0.43), Vector2(0.43, 0.43), Vector2(0.23, 0.43), Vector2(0.43, 0.43)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x1s3d"]
@@ -68,7 +68,9 @@ radius = 71.0
 [node name="AmebaPlayer" type="CharacterBody2D"]
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_b5iwm")
+position = Vector2(13, -14)
+texture = ExtResource("1_ada53")
+offset = Vector2(-13, 14)
 
 [node name="PlayerComponent" parent="." node_paths=PackedStringArray("camera", "player", "animationPlayer") instance=ExtResource("2_1pgcd")]
 camera = NodePath("../CameraComponent")
@@ -94,3 +96,5 @@ entity = NodePath("..")
 
 [node name="ExperienceHandler" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_ada53")]
 player = NodePath("..")
+
+[node name="Marker2D" type="Marker2D" parent="."]
