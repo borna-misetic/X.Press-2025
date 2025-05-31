@@ -1,9 +1,14 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=10 format=3 uid="uid://66yey5wgghoi"]
+=======
+[gd_scene load_steps=11 format=3 uid="uid://v76yw6xit0ya"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://cvq3n7qo86jqq" path="res://Textures/ameba_start.png" id="1_b5iwm"]
 [ext_resource type="PackedScene" uid="uid://ccx04f54j1bka" path="res://Scenes/player_component.tscn" id="2_1pgcd"]
-[ext_resource type="PackedScene" uid="uid://biwcg648l51nl" path="res://Scenes/camera_component.tscn" id="3_jbmmg"]
+[ext_resource type="PackedScene" uid="uid://bftqxpndtywmk" path="res://Scenes/camera_component.tscn" id="3_jbmmg"]
 [ext_resource type="PackedScene" uid="uid://4l10alvui00w" path="res://Scenes/health.tscn" id="4_gh438"]
+[ext_resource type="PackedScene" uid="uid://6xylpf7hnlfk" path="res://Scenes/experience_handler.tscn" id="5_ada53"]
 
 [sub_resource type="Animation" id="Animation_ada53"]
 length = 0.001
@@ -69,9 +74,10 @@ radius = 71.0
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_b5iwm")
 
-[node name="PlayerComponent" parent="." node_paths=PackedStringArray("camera", "player") instance=ExtResource("2_1pgcd")]
+[node name="PlayerComponent" parent="." node_paths=PackedStringArray("camera", "player", "animationPlayer") instance=ExtResource("2_1pgcd")]
 camera = NodePath("../CameraComponent")
 player = NodePath("..")
+animationPlayer = NodePath("../AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -89,3 +95,6 @@ moveScale = 0.2
 
 [node name="Health" parent="." node_paths=PackedStringArray("entity") instance=ExtResource("4_gh438")]
 entity = NodePath("..")
+
+[node name="ExperienceHandler" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_ada53")]
+player = NodePath("..")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhynyvyo2b5qu"]
+
+[ext_resource type="Texture2D" uid="uid://b0tftudda2glb" path="res://Textures/blob.png" id="1_t2fqm"]
+[ext_resource type="PackedScene" uid="uid://uui1e4d646wg" path="res://Scenes/pickup_component.tscn" id="2_li3is"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t2fqm"]
+radius = 17.0
+
+[node name="AmebaBlob" type="Area2D"]
+
+[node name="PickupComponent" parent="." node_paths=PackedStringArray("pickupArea") instance=ExtResource("2_li3is")]
+pickupArea = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t2fqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_t2fqm")
