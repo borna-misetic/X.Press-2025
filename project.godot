@@ -14,6 +14,10 @@ config/name="X.Press-2025"
 run/main_scene="uid://dedd7gw1npskj"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[autoload]
+
+PlayerGlobal="*res://Scripts/playerGlobal.gd"
+
 [display]
 
 window/size/viewport_width=1920

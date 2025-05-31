@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cafw0njeulctk"]
+
+[ext_resource type="Texture2D" uid="uid://740y7gbq7ljb" path="res://Scripts/Borna.jpg" id="1_ypq6p"]
+[ext_resource type="PackedScene" uid="uid://cctoqlo1g7qhv" path="res://Scenes/Enemys/BaseEnemy/EnemyBrain.tscn" id="2_ypq6p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ypq6p"]
+radius = 548.377
+
+[node name="TestEnemy" type="CharacterBody2D"]
+position = Vector2(-3, 2)
+
+[node name="Borna" type="Sprite2D" parent="."]
+position = Vector2(3, 0)
+texture = ExtResource("1_ypq6p")
+
+[node name="EnemyBrain" parent="." node_paths=PackedStringArray("body", "view_radius") instance=ExtResource("2_ypq6p")]
+body = NodePath("..")
+view_radius = NodePath("../Eyes")
+speed = 5000
+
+[node name="Eyes" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Eyes"]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_ypq6p")
