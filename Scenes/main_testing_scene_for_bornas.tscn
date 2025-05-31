@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://v2agcrbl7s6r"]
+[gd_scene load_steps=10 format=3 uid="uid://btme6ijuqq3cx"]
 
 [ext_resource type="PackedScene" uid="uid://v76yw6xit0ya" path="res://Scenes/ameba_player.tscn" id="1_0ckc4"]
 [ext_resource type="PackedScene" uid="uid://cweao267oa60y" path="res://Scenes/Background.tscn" id="2_g4mvs"]
-[ext_resource type="Script" uid="uid://bkh7cy8217nig" path="res://Scripts/background.gd" id="3_qu8yy"]
+[ext_resource type="Script" path="res://Scripts/background.gd" id="3_qu8yy"]
 [ext_resource type="PackedScene" uid="uid://ruriot5w34aa" path="res://Scenes/spawner_component.tscn" id="4_tsgkl"]
 [ext_resource type="PackedScene" uid="uid://bhynyvyo2b5qu" path="res://Scenes/ameba_blob.tscn" id="5_rutjs"]
 [ext_resource type="PackedScene" uid="uid://cafw0njeulctk" path="res://Scenes/Enemys/BaseEnemy/TestEnemy.tscn" id="6_jmgq6"]
@@ -12,7 +12,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmgq6"]
 size = Vector2(25, 25)
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 
 [node name="AmebaPlayer" parent="." instance=ExtResource("1_0ckc4")]
 scale = Vector2(0.3, 0.3)

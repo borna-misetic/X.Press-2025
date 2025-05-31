@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://h3jdas4d3j4h" path="res://Scenes/upgrade_component.tscn" id="6_x1s3d"]
 [ext_resource type="PackedScene" uid="uid://cj2kxni3xgmrl" path="res://Scenes/dash_component.tscn" id="7_05x1w"]
 [ext_resource type="PackedScene" uid="uid://dvr53mqowi2fo" path="res://Scenes/EyeCandy/ghost_sprite/player_ghost_sprite.tscn" id="8_ci70g"]
-[ext_resource type="PackedScene" uid="uid://bll45vtkjlj05" path="res://Scenes/Health bar.tscn" id="8_wq8bw"]
+[ext_resource type="PackedScene" path="res://Scenes/Health bar.tscn" id="8_wq8bw"]
 [ext_resource type="PackedScene" uid="uid://yqllr5qhgisb" path="res://Scenes/Weapons/cell_stage/acid_spit/double_acid_shooter.tscn" id="10_wq8bw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jbmmg"]

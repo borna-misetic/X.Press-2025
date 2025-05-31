@@ -10,7 +10,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if (done == false):
-		text = str(int(round($GODISCOMING.time_left)))
+		if int(round($GODISCOMING.time_left)) % 60 < 10:
+			text = str(int(round($GODISCOMING.time_left)) / 60) + ':0' + str(int(round($GODISCOMING.time_left)) % 60)
+		else:
+			text = str(int(round($GODISCOMING.time_left)) / 60) + ':' + str(int(round($GODISCOMING.time_left)) % 60)
 		modulate = Color.RED
 	else: pass
 

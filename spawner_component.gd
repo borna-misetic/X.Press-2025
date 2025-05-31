@@ -14,6 +14,9 @@ func _process(delta: float) -> void:
 	if (not timer.is_stopped()):
 		currencyTimer -= delta
 		enemyTimer -= delta
+	else:
+		currencyTimer = 0
+		enemyTimer = 0
 	if(player.velocity != Vector2.ZERO):
 		if(currencyTimer < 0):
 			currencyTimer = 0.2
