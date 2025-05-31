@@ -17,8 +17,14 @@ position = Vector2(-1440, -810)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("3_jjvhh")
 
-[node name="SpawnerComponent" parent="." node_paths=PackedStringArray("player", "world") instance=ExtResource("5_kry3j")]
+[node name="SpawnerComponent" parent="." node_paths=PackedStringArray("player", "world", "timer") instance=ExtResource("5_kry3j")]
 spawnableCurrency = ExtResource("1_kry3j")
 spawnableEnemy = ExtResource("6_21xkr")
 player = NodePath("../AmebaPlayer")
 world = NodePath("..")
+timer = NodePath("../GODISCOMING")
+
+[node name="GODISCOMING" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
