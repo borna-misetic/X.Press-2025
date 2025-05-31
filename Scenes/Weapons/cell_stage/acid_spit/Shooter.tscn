@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://lt53c2irva7"]
+
+[ext_resource type="Script" uid="uid://cdjfpvgko3dbr" path="res://Scenes/Weapons/cell_stage/acid_spit/acid_shooter.gd" id="1_j2jrc"]
+[ext_resource type="Texture2D" uid="uid://d2rhteb6ssyrq" path="res://Textures/Modules/SpitCe.png" id="1_m5m30"]
+
+[node name="Shooter" type="Node2D"]
+script = ExtResource("1_j2jrc")
+
+[node name="SpitCe" type="Sprite2D" parent="."]
+position = Vector2(1.99999, -0.999996)
+scale = Vector2(0.514, 0.514)
+texture = ExtResource("1_m5m30")
+flip_h = true
+
+[node name="barrel" type="Marker2D" parent="."]
+position = Vector2(-38, -35)

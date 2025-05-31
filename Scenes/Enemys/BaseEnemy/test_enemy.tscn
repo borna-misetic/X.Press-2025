@@ -1,3 +1,3 @@
-[gd_scene format=3 uid="uid://dc20wbxsk24mg"]
+[gd_scene format=3 uid="uid://bdft0g7e6ei52"]
 
 [node name="TestEnemy" type="CharacterBody2D"]

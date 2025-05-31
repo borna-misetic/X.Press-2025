@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0emtjpvv7es5"]
+
+[ext_resource type="Script" uid="uid://dhoyapq0464am" path="res://Scenes/Weapons/cell_stage/acid_spit/acid_bullet.gd" id="1_exvw4"]
+[ext_resource type="Texture2D" uid="uid://b0tftudda2glb" path="res://Textures/blob.png" id="2_kv0br"]
+[ext_resource type="PackedScene" uid="uid://eh6x3dh0iwr3" path="res://Scenes/HurtBox.tscn" id="3_plwch"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r7q32"]
+radius = 11.0454
+
+[node name="AcidBullet" type="CharacterBody2D"]
+script = ExtResource("1_exvw4")
+
+[node name="Blob" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.541176)
+position = Vector2(9.53674e-07, -9.53674e-07)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_kv0br")
+
+[node name="Hurt" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt"]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_r7q32")
+
+[node name="HurtBox" parent="." node_paths=PackedStringArray("hurt_area") instance=ExtResource("3_plwch")]
+position = Vector2(-1, 0)
+hurt_area = NodePath("../Hurt")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
