@@ -8,6 +8,7 @@ const RATE_OF_CHANGE := 1.5
 var level := 1
 var currentExperience := 0.0
 var toNextLevel := 10.0
+var pointsAvailable = 0
 
 func getExperience(experience : float):
 	currentExperience += experience
@@ -15,6 +16,8 @@ func getExperience(experience : float):
 	if(currentExperience >= toNextLevel):
 		currentExperience = 0.0
 		level += 1
+		pointsAvailable += 1
 		toNextLevel += level * RATE_OF_CHANGE
 		upgradeComponent.updateExperienceBar(currentExperience, toNextLevel, level)
-		
+		if (!upgradeComponent.upgradeShown):
+			upgradeComponent.showUpgrade()

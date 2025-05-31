@@ -26,7 +26,6 @@ offset = Vector2(-13, 14)
 [node name="PlayerComponent" parent="." node_paths=PackedStringArray("camera", "player", "playerSprite", "dashUpgrade") instance=ExtResource("2_1pgcd")]
 camera = NodePath("../CameraComponent")
 player = NodePath("..")
-speed = null
 playerSprite = NodePath("../PlayerSprite")
 dashUpgrade = NodePath("../DashComponent")
 
