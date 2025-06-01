@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 func Enter():
 	start_idle = false;
-	get_parent().get_parent().body.modulate = Color(1,0,1);
+	#get_parent().get_parent().body.modulate = Color(1,0,1);
 
 
 func Exit():
