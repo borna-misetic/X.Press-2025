@@ -2,6 +2,8 @@ extends Node
 
 var player : CharacterBody2D;
 
+var damage := 1
+
 func _ready() -> void:
 	pass;
 	

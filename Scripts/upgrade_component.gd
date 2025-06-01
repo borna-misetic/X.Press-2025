@@ -67,6 +67,7 @@ func _on_upgrade_health_button_pressed() -> void:
 func _on_upgrade_damage_button_pressed() -> void:
 	AudioManager.clickButton.play()
 	experienceHandlerRoutine(damageLevelBar)
+	PlayerGlobal.damage+=1
 
 
 func _on_upgrade_speed_button_pressed() -> void:
