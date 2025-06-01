@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhynyvyo2b5qu"]
+[gd_scene load_steps=5 format=3 uid="uid://bhynyvyo2b5qu"]
 
 [ext_resource type="Texture2D" uid="uid://cxgh6fowtnk6m" path="res://Textures/Blob2.png" id="2_g1rsb"]
-[ext_resource type="PackedScene" uid="uid://uui1e4d646wg" path="res://Scenes/pickup_component.tscn" id="2_li3is"]
+[ext_resource type="PackedScene" path="res://Scenes/pickup_component.tscn" id="2_li3is"]
+[ext_resource type="Script" uid="uid://d2ovayad1xuh" path="res://Scripts/BlobColor.gd" id="3_g1rsb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2fqm"]
 radius = 17.0
@@ -14,6 +15,7 @@ pickupArea = NodePath("..")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.441596, 0.441596)
 texture = ExtResource("2_g1rsb")
+script = ExtResource("3_g1rsb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.84, 1.84)
