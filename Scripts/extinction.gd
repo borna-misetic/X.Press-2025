@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var FinalEnemy = load("res://Scenes/Enemys/BaseEnemy/TestEnemy.tscn")
 @onready var Player = $"../AmebaPlayer"
+@onready var done := false
+@onready var Hits := 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -9,7 +12,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if done==true:
+		Hits = 0;
+		for ENEMY in get_tree().get_nodes_in_group("Enemies"):
+			Hits += 1;
+		if Hits == 0:
+			print("DOOOOOOONNNEEEE!")
 
 
 func _on_godiscoming_timeout() -> void:
@@ -22,3 +30,4 @@ func _on_godiscoming_timeout() -> void:
 		var ExInst = FinalEnemy.instantiate()
 		ExInst.global_position = Player.position+Vector2(700,700).rotated(remap(i,0,12,0,2*PI))
 		$".".add_child(ExInst)
+	done = true
