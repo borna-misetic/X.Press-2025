@@ -10,15 +10,17 @@ config_version=5
 
 [application]
 
-config/name="X.Press-2025"
+config/name="Perdominant"
 run/main_scene="uid://1rmyq1xls5ht"
 config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://Fonts/Amoeba.ico"
 
 [autoload]
 
 PlayerGlobal="*res://Scripts/playerGlobal.gd"
 AudioManager="*res://Scenes/audio_manager.tscn"
 RandomColor="*res://Scripts/RandomColor.gd"
+MenuVisualFlag="*res://Scripts/MenuVisualFlag.gd"
 
 [display]
 

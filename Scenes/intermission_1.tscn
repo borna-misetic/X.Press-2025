@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bged1quay8gpf"]
 
-[ext_resource type="Script" uid="uid://beckvbfqjquow" path="res://Scenes/intermission_1.gd" id="1_3algy"]
+[ext_resource type="Script" uid="uid://beckvbfqjquow" path="res://Scripts/intermission_1.gd" id="1_3algy"]
 [ext_resource type="FontFile" uid="uid://dmje0kblmalj4" path="res://Fonts/lato.heavy-italic.ttf" id="1_itb17"]
 
 [sub_resource type="Animation" id="Animation_itb17"]

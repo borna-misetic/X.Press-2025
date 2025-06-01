@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cep2nf6piffhy"]
+[gd_scene load_steps=15 format=3 uid="uid://cep2nf6piffhy"]
 
 [ext_resource type="AudioStream" uid="uid://dnhhwipj7q731" path="res://Sounds/Menu.wav" id="1_5kf6k"]
 [ext_resource type="Script" uid="uid://b1nnrakx4ngy" path="res://Scripts/audio_manager.gd" id="1_sm2tf"]
@@ -12,7 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://dw52kdcbv3xw4" path="res://Sounds/SFX/WaterSlosh1.ogg" id="10_jmilc"]
 [ext_resource type="AudioStream" uid="uid://y2pyppkmv48h" path="res://Sounds/SFX/Dash.ogg" id="11_5nrbi"]
 [ext_resource type="AudioStream" uid="uid://dft7118xecd56" path="res://Sounds/Ending.wav" id="12_fasow"]
-[ext_resource type="AudioStream" uid="uid://ddkftxt6s6xil" path="res://Sounds/SFX/SpaceshipExplodes.ogg" id="13_1bal0"]
+[ext_resource type="AudioStream" uid="uid://1w182ri2cilw" path="res://Sounds/SFX/Nuke.wav" id="13_fasow"]
+[ext_resource type="AudioStream" uid="uid://ddol7bslhy3ee" path="res://Sounds/SFX/Hit21.ogg" id="14_1bal0"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_sm2tf")
@@ -60,7 +61,12 @@ bus = &"SFX"
 
 [node name="Ending" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_fasow")
+bus = &"Music"
 
 [node name="Nuke" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_1bal0")
-pitch_scale = 0.57
+stream = ExtResource("13_fasow")
+bus = &"SFX"
+
+[node name="Bleep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_1bal0")
+bus = &"SFX"

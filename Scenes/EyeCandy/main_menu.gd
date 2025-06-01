@@ -2,12 +2,20 @@ extends Control
 
 @onready var mainPanel = $MainPanel
 @onready var settingsPanel = $SettingsPanel
+@onready var tutorialPanel = $TutorialPanel
 @onready var sfxSlider = $SettingsPanel/HBoxContainer/VBoxContainer/HBoxContainer/SFXSlider
 @onready var musicSlider = $SettingsPanel/HBoxContainer/VBoxContainer/HBoxContainer2/MusicSlider
+@onready var normalBackground = preload("res://Textures/Cover1.png")
+@onready var nukeBackground = preload("res://Textures/Cover.png")
 
 func _ready() -> void:
-	#$MainMenu.play()
-	AudioManager.menuMusic.play()
+	if(!MenuVisualFlag.changed):
+		AudioManager.menuMusic.play()
+		$TextureRect.texture = normalBackground
+	else:
+		AudioManager.Ending.play()
+		$TextureRect.texture = nukeBackground
+		
 
 func _on_settings_button_pressed() -> void:
 	AudioManager.clickButton.play()
@@ -42,4 +50,15 @@ func _on_back_button_mouse_entered() -> void:
 
 
 func _on_start_button_pressed() -> void:
+	AudioManager.clickButton.play()
+	tutorialPanel.visible = true
+	mainPanel.visible = false
+
+
+func _on_play_button_pressed() -> void:
+	AudioManager.clickButton.play()
 	get_tree().change_scene_to_file("res://Scenes/intermission_1.tscn")
+
+
+func _on_play_button_mouse_entered() -> void:
+	AudioManager.hoverButton.play()

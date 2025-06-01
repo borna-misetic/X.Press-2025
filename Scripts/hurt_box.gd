@@ -10,7 +10,9 @@ func _ready() -> void:
 
 
 func give_damage(area : Area2D):
-	var damaged_entity = area.get_parent().get_node("Health");
+	var damaged_entity
+	if area.get_parent().get_node("Health") != null:
+		damaged_entity = area.get_parent().get_node("Health");
 	if damaged_entity != null && area.get_parent().is_in_group(grupa):
 		damaged_entity.take_damage(PlayerGlobal.damage);
 	

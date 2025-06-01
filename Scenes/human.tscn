@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://du1wc25ybtnt4"]
 
-[ext_resource type="Script" uid="uid://ck8krdfpgskmg" path="res://Scenes/human.gd" id="1_073c6"]
+[ext_resource type="Script" uid="uid://ck8krdfpgskmg" path="res://Scripts/human.gd" id="1_073c6"]
 [ext_resource type="Texture2D" uid="uid://brbtmbjinsaj0" path="res://Textures/Human1.png" id="1_j03jf"]
 [ext_resource type="PackedScene" uid="uid://bftqxpndtywmk" path="res://Scenes/camera_component.tscn" id="2_073c6"]
 

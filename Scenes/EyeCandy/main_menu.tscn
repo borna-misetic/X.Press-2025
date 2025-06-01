@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://1rmyq1xls5ht"]
+[gd_scene load_steps=7 format=3 uid="uid://1rmyq1xls5ht"]
 
 [ext_resource type="FontFile" uid="uid://dmje0kblmalj4" path="res://Fonts/lato.heavy-italic.ttf" id="1_l0xik"]
 [ext_resource type="Script" uid="uid://ctm0f0cedgfrw" path="res://Scenes/EyeCandy/main_menu.gd" id="1_yat43"]
-[ext_resource type="Texture2D" uid="uid://denp37dmn70td" path="res://Textures/Cover.png" id="2_53ww3"]
+[ext_resource type="Texture2D" uid="uid://cf0yqlage15gu" path="res://Textures/Cover1.png" id="2_mg3yx"]
+[ext_resource type="Texture2D" uid="uid://dq2rx8gdgfmti" path="res://Textures/Tutorial.png" id="4_225o8"]
 [ext_resource type="AudioStream" uid="uid://dnhhwipj7q731" path="res://Sounds/Menu.wav" id="4_mg3yx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvfg2"]
+bg_color = Color(0.886275, 0.882353, 0.882353, 0.478431)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -21,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_53ww3")
+texture = ExtResource("2_mg3yx")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -184,6 +188,46 @@ layout_mode = 2
 custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
 
+[node name="TutorialPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wvfg2")
+
+[node name="Label" type="Label" parent="TutorialPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -737.0
+offset_top = 163.0
+offset_right = -35.0
+offset_bottom = 296.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_l0xik")
+theme_override_font_sizes/font_size = 110
+text = "HOW TO PLAY"
+
+[node name="Tutorial" type="Sprite2D" parent="TutorialPanel"]
+position = Vector2(905, 555)
+scale = Vector2(0.720001, 0.720001)
+texture = ExtResource("4_225o8")
+
+[node name="PlayButton" type="Button" parent="TutorialPanel"]
+layout_mode = 0
+offset_left = 1486.0
+offset_top = 854.0
+offset_right = 1776.0
+offset_bottom = 983.0
+theme_override_fonts/font = ExtResource("1_l0xik")
+theme_override_font_sizes/font_size = 90
+text = "START"
+
 [node name="MainMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_mg3yx")
 
@@ -195,3 +239,5 @@ stream = ExtResource("4_mg3yx")
 [connection signal="value_changed" from="SettingsPanel/HBoxContainer/VBoxContainer/HBoxContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="mouse_entered" from="SettingsPanel/HBoxContainer/VBoxContainer/BackButton" to="." method="_on_back_button_mouse_entered"]
 [connection signal="pressed" from="SettingsPanel/HBoxContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="TutorialPanel/PlayButton" to="." method="_on_play_button_mouse_entered"]
+[connection signal="pressed" from="TutorialPanel/PlayButton" to="." method="_on_play_button_pressed"]

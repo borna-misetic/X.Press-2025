@@ -47,6 +47,7 @@ func clamp_health():
 
 func set_max_health():
 	max_health += 2;
+	print(max_health)
 	current_health = max_health
 	changed_max_health.emit(2);
 

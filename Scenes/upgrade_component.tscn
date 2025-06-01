@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bax0hg4tkerc" path="res://Textures/smoke.png" id="3_rf76u"]
 [ext_resource type="Texture2D" uid="uid://es5gwkrxvvlc" path="res://Textures/Modules/Spit3.png" id="4_chs1m"]
 [ext_resource type="Texture2D" uid="uid://btf3mfro3vtj0" path="res://Textures/Modules/CloudCe.png" id="5_hrael"]
-[ext_resource type="Script" uid="uid://bvilwvkvq0nir" path="res://Scripts/time_left.gd" id="6_chs1m"]
+[ext_resource type="Script" uid="uid://bvilwvkvq0nir" path="res://Fonts/time_left.gd" id="6_chs1m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u60rl"]
 bg_color = Color(0.200195, 0.495826, 0.251511, 1)

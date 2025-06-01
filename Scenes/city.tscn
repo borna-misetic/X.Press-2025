@@ -1,7 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://dtdk4dl77tgqi"]
+[gd_scene load_steps=27 format=3 uid="uid://dtdk4dl77tgqi"]
 
+[ext_resource type="Script" uid="uid://bf5v6oft42emy" path="res://Scripts/city.gd" id="1_stmv5"]
 [ext_resource type="Texture2D" uid="uid://cyl14xq4ttfdf" path="res://Textures/City.png" id="1_u7naw"]
 [ext_resource type="PackedScene" uid="uid://du1wc25ybtnt4" path="res://Scenes/human.tscn" id="2_kyn5i"]
+[ext_resource type="FontFile" uid="uid://dmje0kblmalj4" path="res://Fonts/lato.heavy-italic.ttf" id="3_o60eo"]
+[ext_resource type="FontFile" uid="uid://qjm8lscp3qtg" path="res://Fonts/seven-segment.ttf" id="5_adj8p"]
+[ext_resource type="Texture2D" uid="uid://dakhk7c7p4g5h" path="res://Fonts/Borna.jpg" id="6_3qc4n"]
+[ext_resource type="Texture2D" uid="uid://bm2v6a5uph4wo" path="res://Fonts/rn_image_picker_lib_temp_51f61f0a-2d91-480b-bc5d-ae0675cd5656.jpg" id="7_ujmo6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyn5i"]
 size = Vector2(34.87, 47.1735)
@@ -45,7 +50,53 @@ size = Vector2(116.785, 66.7641)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pdxid"]
 size = Vector2(24.8818, 108.967)
 
-[node name="City" type="Node2D"]
+[sub_resource type="Gradient" id="Gradient_stmv5"]
+offsets = PackedFloat32Array(0, 0.461039)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_adj8p"]
+gradient = SubResource("Gradient_stmv5")
+
+[sub_resource type="Animation" id="Animation_ujmo6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1920, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3qc4n"]
+resource_name = "explode"
+length = 5.83
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.1, 3),
+"transitions": PackedFloat32Array(3.73213, 0.0915054, 2.46229),
+"update": 0,
+"values": [Vector2(1920, 0), Vector2(0, 0), Vector2(-1920, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h0cym"]
+_data = {
+&"RESET": SubResource("Animation_ujmo6"),
+&"explode": SubResource("Animation_3qc4n")
+}
+
+[node name="City" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_stmv5")
+player = NodePath("CharacterBody2D")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -739,8 +790,61 @@ position = Vector2(-2669.5, 502)
 scale = Vector2(16.92, 20.52)
 shape = SubResource("RectangleShape2D_pdxid")
 
+[node name="Borna" type="Sprite2D" parent="."]
+position = Vector2(-4867, -1253)
+texture = ExtResource("6_3qc4n")
+
+[node name="RnImagePickerLibTemp51f61f0a-2d91-480b-bc5d-ae0675Cd5656" type="Sprite2D" parent="."]
+position = Vector2(-2526, 2233)
+scale = Vector2(0.11895, 0.11895)
+texture = ExtResource("7_ujmo6")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_kyn5i")]
 position = Vector2(127, 47)
 
 [node name="NuclearTimer" type="Timer" parent="."]
 wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="SoundTimer" type="Timer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 1441.0
+offset_top = 838.0
+offset_right = 1843.0
+offset_bottom = 906.0
+theme_override_fonts/font = ExtResource("3_o60eo")
+theme_override_font_sizes/font_size = 54
+text = "EXTINCTION IN:"
+
+[node name="Countdown" type="Label" parent="CanvasLayer"]
+offset_left = 1530.0
+offset_top = 904.0
+offset_right = 1733.0
+offset_bottom = 1029.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_adj8p")
+theme_override_font_sizes/font_size = 120
+text = "0:00"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1920.0
+offset_right = 1920.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 1)
+texture = SubResource("GradientTexture1D_adj8p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h0cym")
+}
+
+[connection signal="timeout" from="NuclearTimer" to="." method="_on_nuclear_timer_timeout"]
+[connection signal="timeout" from="SoundTimer" to="." method="_on_sound_timer_timeout"]

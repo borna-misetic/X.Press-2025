@@ -12,3 +12,4 @@ extends Node
 @onready var Dash := $Dash
 @onready var Ending := $Ending
 @onready var Nuke := $Nuke
+@onready var Bleep := $Bleep

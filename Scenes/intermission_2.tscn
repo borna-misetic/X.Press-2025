@@ -67,7 +67,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 8.1999, 17.5999),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": ["Despite the odds stacked agianst you...", "However, despite how much living beings...", "your story will soon unfortunately..."]
+"values": ["Despite the odds stacked agianst you...", "However, no matter how much living beings...", "your story will soon unfortunately..."]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -138,9 +138,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 160.0
-offset_top = 382.188
+offset_top = 387.857
 offset_right = -257.0
-offset_bottom = -336.812
+offset_bottom = -331.143
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.16, 1.16)

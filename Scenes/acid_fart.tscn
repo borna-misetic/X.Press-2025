@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dw7bawh57rayx"]
 
-[ext_resource type="Script" uid="uid://ca6kqd3nphv7p" path="res://Scenes/acid_fart.gd" id="1_5sncf"]
+[ext_resource type="Script" uid="uid://ca6kqd3nphv7p" path="res://Scripts/acid_fart.gd" id="1_5sncf"]
 [ext_resource type="Texture2D" uid="uid://bax0hg4tkerc" path="res://Textures/smoke.png" id="1_vpvhi"]
 [ext_resource type="PackedScene" uid="uid://eh6x3dh0iwr3" path="res://Scenes/HurtBox.tscn" id="3_y8y1m"]
 
