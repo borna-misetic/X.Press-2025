@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	if (shooting_enamble):
 		shoot();
 	
-	if Input.is_action_pressed("shoot") && can_shoot:
+	if Input.is_action_pressed("shoot") && can_shoot and $"..".visible:
 		start_shooting();
 		
 

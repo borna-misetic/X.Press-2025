@@ -19,6 +19,8 @@ var CloudUnlocked := false
 @onready var speedLevelBar = $"HBoxContainer/Upgrade panel/Rows/Speed/Panel/SpeedProgressBar"
 @onready var pointsAvailable = $"HBoxContainer/Upgrade panel/Rows/PointsAvailable"
 
+@onready var GunsYAY = $"../../DoubleAcidShooter"
+
 #func _ready() -> void:
 	#$BigUpgradePanel/BigEvolvePlay.play("BigEvolve")
 
@@ -87,6 +89,7 @@ func _on_dash_pressed() -> void:
 
 func _on_spit_pressed() -> void:
 	SpitUnlocked=true
+	GunsYAY.show()
 	$BigUpgradePanel/Rows/HBoxContainer/TextureRect/DASH.disabled=true
 	$BigUpgradePanel/Rows/HBoxContainer/TextureRect2/SPIT.disabled=true
 	$BigUpgradePanel/Rows/HBoxContainer/TextureRect3/CLOUD.disabled=true

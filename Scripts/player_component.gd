@@ -7,12 +7,14 @@ extends Node
 @export var dashUpgrade : Node2D
 @onready var FartScene = load("res://Scenes/acid_fart.tscn")
 @onready var upgradeComponent = $"../CanvasLayer/Upgrade_component"
+@onready var Guns = $"../DoubleAcidShooter"
 
 var time : float
 var speedMultiplier = 1.0
 
 func _ready() -> void:
 	PlayerGlobal.register_player(player);
+	Guns.hide()
 	
 func _physics_process(delta: float) -> void:
 	time += delta
