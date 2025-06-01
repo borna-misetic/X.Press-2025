@@ -26,7 +26,7 @@ world = NodePath("..")
 timer = NodePath("../GODISCOMING")
 
 [node name="GODISCOMING" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 300.0
 one_shot = true
 autostart = true
 
