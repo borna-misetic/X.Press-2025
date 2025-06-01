@@ -7,6 +7,7 @@ extends Node2D
 
 
 func apply_dash():
+	AudioManager.Dash.play()
 	timer.start()
 	var tween = get_tree().create_tween()
 	tween.tween_property(body, "position", body.position + body.velocity * dash_factor, 0.45);

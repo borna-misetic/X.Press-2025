@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cep2nf6piffhy"]
+[gd_scene load_steps=12 format=3 uid="uid://cep2nf6piffhy"]
 
 [ext_resource type="AudioStream" uid="uid://dnhhwipj7q731" path="res://Sounds/Menu.wav" id="1_5kf6k"]
 [ext_resource type="Script" uid="uid://b1nnrakx4ngy" path="res://Scripts/audio_manager.gd" id="1_sm2tf"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bivpow743b2xg" path="res://Sounds/SFX/WaterClick.ogg" id="8_tnn7g"]
 [ext_resource type="AudioStream" uid="uid://d1pxsi16c1tp7" path="res://Sounds/SFX/Sound1.ogg" id="9_lwpe1"]
 [ext_resource type="AudioStream" uid="uid://dw52kdcbv3xw4" path="res://Sounds/SFX/WaterSlosh1.ogg" id="10_jmilc"]
+[ext_resource type="AudioStream" uid="uid://y2pyppkmv48h" path="res://Sounds/SFX/Dash.ogg" id="11_5nrbi"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_sm2tf")
@@ -28,18 +29,29 @@ bus = &"SFX"
 
 [node name="Stage1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_tnn7g")
+bus = &"Music"
 
 [node name="Stage2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_lwpe1")
+bus = &"Music"
 
 [node name="Stage3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_jmilc")
+bus = &"Music"
 
 [node name="Pickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_tnn7g")
+bus = &"SFX"
 
 [node name="Shoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_lwpe1")
+bus = &"SFX"
 
 [node name="Hit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_jmilc")
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="Dash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_5nrbi")
+bus = &"SFX"
