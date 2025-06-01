@@ -1,8 +1,22 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=6 format=3 uid="uid://bged1quay8gpf"]
 
 [ext_resource type="Script" uid="uid://beckvbfqjquow" path="res://Scenes/intermission_1.gd" id="1_3algy"]
 [ext_resource type="FontFile" uid="uid://dmje0kblmalj4" path="res://Fonts/lato.heavy-italic.ttf" id="1_itb17"]
+
+[sub_resource type="Animation" id="Animation_itb17"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, 358)]
+}
 
 [sub_resource type="Animation" id="Animation_3algy"]
 resource_name = "scene"
@@ -20,29 +34,11 @@ tracks/0/keys = {
 "values": [Vector2(160, 358), Vector2(160, 554), Vector2(160, 554), Vector2(160, 707)]
 }
 
-[sub_resource type="Animation" id="Animation_itb17"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(160, 358)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g3hbq"]
 _data = {
 &"RESET": SubResource("Animation_itb17"),
 &"scene": SubResource("Animation_3algy")
 }
-=======
-[gd_scene load_steps=0 format=3 uid="uid://bged1quay8gpf"]
->>>>>>> Stashed changes
 
 [node name="Intermission1" type="Control"]
 layout_mode = 3

@@ -60,14 +60,17 @@ func updatePointsAvailable() -> void:
 		hideUpgrade()
 
 func _on_upgrade_health_button_pressed() -> void:
+	AudioManager.clickButton.play()
 	experienceHandlerRoutine(healthLevelBar)
 	healthComponent.set_max_health()
 
 func _on_upgrade_damage_button_pressed() -> void:
+	AudioManager.clickButton.play()
 	experienceHandlerRoutine(damageLevelBar)
 
 
 func _on_upgrade_speed_button_pressed() -> void:
+	AudioManager.clickButton.play()
 	experienceHandlerRoutine(speedLevelBar)
 	playerComponent.speedMultiplier += 0.35
 

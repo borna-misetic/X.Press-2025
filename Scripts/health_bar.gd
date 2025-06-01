@@ -10,6 +10,7 @@ func _ready() -> void:
 	HBar.max_value = MortalsHealth.max_health;
 	HBar.value = MortalsHealth.current_health;
 	MortalsHealth.took_damage.connect(update_bar);
+	MortalsHealth.changed_max_health.connect(update_bar);
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,6 +25,6 @@ func _process(delta: float) -> void:
 		HBar.show()
 	#HBar.value = MortalsHealth.current_health*20
 
-func update_bar(amount : int):
+func update_bar(amount):
 	HBar.max_value = MortalsHealth.max_health;
 	HBar.value = MortalsHealth.current_health;

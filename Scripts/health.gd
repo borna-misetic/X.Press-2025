@@ -44,7 +44,8 @@ func clamp_health():
 
 func set_max_health():
 	max_health += 2;
-	changed_max_health.emit();
+	current_health = max_health
+	changed_max_health.emit(2);
 
 
 func _on_died() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cep2nf6piffhy"]
+[gd_scene load_steps=10 format=3 uid="uid://cep2nf6piffhy"]
 
 [ext_resource type="AudioStream" uid="uid://dnhhwipj7q731" path="res://Sounds/Menu.wav" id="1_5kf6k"]
 [ext_resource type="Script" uid="uid://b1nnrakx4ngy" path="res://Scripts/audio_manager.gd" id="1_sm2tf"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://dtojx0nm7a0hh" path="res://Sounds/SFX/BassHit2.ogg" id="3_qixve"]
 [ext_resource type="AudioStream" uid="uid://daacnq12q1stl" path="res://Sounds/Stage3.wav" id="4_jmilc"]
 [ext_resource type="AudioStream" uid="uid://khs4ckegrvm2" path="res://Sounds/SFX/Hit53.ogg" id="7_fasow"]
+[ext_resource type="AudioStream" uid="uid://bivpow743b2xg" path="res://Sounds/SFX/WaterClick.ogg" id="8_tnn7g"]
+[ext_resource type="AudioStream" uid="uid://d1pxsi16c1tp7" path="res://Sounds/SFX/Sound1.ogg" id="9_lwpe1"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_sm2tf")
@@ -31,3 +33,9 @@ stream = ExtResource("3_lwpe1")
 
 [node name="Stage3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_jmilc")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_tnn7g")
+
+[node name="Shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_lwpe1")

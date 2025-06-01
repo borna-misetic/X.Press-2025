@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 		shoot();
 	
 	if Input.is_action_pressed("shoot") && can_shoot and $"..".visible:
+		AudioManager.Shoot.play()
 		start_shooting();
 		
 

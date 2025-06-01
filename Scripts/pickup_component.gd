@@ -10,4 +10,5 @@ func _ready() -> void:
 func give_experience(body : Node2D):
 	var experienceHandler : ExperienceHandler = body.get_node("ExperienceHandler");
 	experienceHandler.getExperience(experience);
+	AudioManager.Pickup.play()
 	pickupArea.queue_free()
