@@ -6,15 +6,17 @@ extends Control
 @onready var musicSlider = $SettingsPanel/HBoxContainer/VBoxContainer/HBoxContainer2/MusicSlider
 
 func _ready() -> void:
-	AudioManager.mainMenu.play()
+	#$MainMenu.play()
+	AudioManager.menuMusic.play()
 
 func _on_settings_button_pressed() -> void:
-	AudioManager.playMainMenu()
+	AudioManager.clickButton.play()
 	mainPanel.hide()
 	settingsPanel.show()
 
 
 func _on_back_button_pressed() -> void:
+	AudioManager.clickButton.play()
 	settingsPanel.hide()
 	mainPanel.show()
 
@@ -25,3 +27,19 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 
 func _on_music_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(2, linear_to_db(musicSlider.value))
+
+
+func _on_start_button_mouse_entered() -> void:
+	AudioManager.hoverButton.play()
+
+
+func _on_settings_button_mouse_entered() -> void:
+	AudioManager.hoverButton.play()
+
+
+func _on_back_button_mouse_entered() -> void:
+	AudioManager.hoverButton.play()
+
+
+func _on_start_button_pressed() -> void:
+	get_tree().change_scene_to_file()

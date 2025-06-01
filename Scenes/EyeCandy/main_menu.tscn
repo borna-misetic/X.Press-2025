@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://1rmyq1xls5ht"]
+[gd_scene load_steps=5 format=3 uid="uid://1rmyq1xls5ht"]
 
 [ext_resource type="FontFile" uid="uid://dmje0kblmalj4" path="res://Fonts/lato.heavy-italic.ttf" id="1_l0xik"]
 [ext_resource type="Script" uid="uid://ctm0f0cedgfrw" path="res://Scenes/EyeCandy/main_menu.gd" id="1_yat43"]
 [ext_resource type="Texture2D" uid="uid://denp37dmn70td" path="res://Textures/Cover.png" id="2_53ww3"]
+[ext_resource type="AudioStream" uid="uid://dnhhwipj7q731" path="res://Sounds/Menu.wav" id="4_mg3yx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -183,7 +184,13 @@ layout_mode = 2
 custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
 
+[node name="MainMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mg3yx")
+
+[connection signal="mouse_entered" from="MainPanel/VBoxContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_entered" from="MainPanel/VBoxContainer/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
 [connection signal="pressed" from="MainPanel/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="value_changed" from="SettingsPanel/HBoxContainer/VBoxContainer/HBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="value_changed" from="SettingsPanel/HBoxContainer/VBoxContainer/HBoxContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="mouse_entered" from="SettingsPanel/HBoxContainer/VBoxContainer/BackButton" to="." method="_on_back_button_mouse_entered"]
 [connection signal="pressed" from="SettingsPanel/HBoxContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
