@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bhynyvyo2b5qu"]
 
 [ext_resource type="Texture2D" uid="uid://cxgh6fowtnk6m" path="res://Textures/Blob2.png" id="2_g1rsb"]
-[ext_resource type="PackedScene" path="res://Scenes/pickup_component.tscn" id="2_li3is"]
-[ext_resource type="Script" uid="uid://d2ovayad1xuh" path="res://Scripts/BlobColor.gd" id="3_g1rsb"]
+[ext_resource type="PackedScene" uid="uid://uui1e4d646wg" path="res://Scenes/pickup_component.tscn" id="2_li3is"]
+[ext_resource type="Script" path="res://Scripts/BlobColor.gd" id="3_g1rsb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2fqm"]
 radius = 17.0

@@ -8,3 +8,4 @@ extends Node
 @onready var stage3 := $Stage3
 @onready var Pickup := $Pickup
 @onready var Shoot := $Shoot
+@onready var Hit := $Hit

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b5mjxn8q5v4ej" path="res://Textures/EnemyAmoeba.png" id="1_r0wgd"]
 [ext_resource type="Texture2D" uid="uid://740y7gbq7ljb" path="res://Scripts/Borna.jpg" id="1_ypq6p"]
-[ext_resource type="Script" uid="uid://bny4lj7y3o4hu" path="res://Scripts/EnemyColor.gd" id="2_btwjt"]
+[ext_resource type="Script" path="res://Scripts/EnemyColor.gd" id="2_btwjt"]
 [ext_resource type="PackedScene" uid="uid://cctoqlo1g7qhv" path="res://Scenes/Enemys/BaseEnemy/EnemyBrain.tscn" id="2_ypq6p"]
 [ext_resource type="PackedScene" uid="uid://4l10alvui00w" path="res://Scenes/health.tscn" id="3_bsgnj"]
 [ext_resource type="PackedScene" uid="uid://eh6x3dh0iwr3" path="res://Scenes/HurtBox.tscn" id="4_83dho"]

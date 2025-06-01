@@ -20,6 +20,9 @@ func _ready() -> void:
 	#print(entity)
 
 func take_damage(amount: int):
+	print(AudioManager.Hit.playing)
+	if(!AudioManager.Hit.playing):
+		AudioManager.Hit.play()
 	if imortality:
 		#print("Ako se pitas zasto ne dobivam damage, e pa imortal sam");
 		return
