@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bged1quay8gpf"]
+[gd_scene load_steps=0 format=3 uid="uid://bged1quay8gpf"]
 
 [node name="Intermission1" type="Control"]
 layout_mode = 3
