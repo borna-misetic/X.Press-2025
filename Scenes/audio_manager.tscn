@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cep2nf6piffhy"]
+[gd_scene load_steps=8 format=3 uid="uid://cep2nf6piffhy"]
 
 [ext_resource type="AudioStream" uid="uid://dnhhwipj7q731" path="res://Sounds/Menu.wav" id="1_5kf6k"]
 [ext_resource type="Script" uid="uid://b1nnrakx4ngy" path="res://Scripts/audio_manager.gd" id="1_sm2tf"]
+[ext_resource type="AudioStream" uid="uid://dc86njqewv1yh" path="res://Sounds/Stage1.wav" id="2_tnn7g"]
+[ext_resource type="AudioStream" uid="uid://coss4mf8qoo3f" path="res://Sounds/Stage2.wav" id="3_lwpe1"]
 [ext_resource type="AudioStream" uid="uid://dtojx0nm7a0hh" path="res://Sounds/SFX/BassHit2.ogg" id="3_qixve"]
+[ext_resource type="AudioStream" uid="uid://daacnq12q1stl" path="res://Sounds/Stage3.wav" id="4_jmilc"]
 [ext_resource type="AudioStream" uid="uid://khs4ckegrvm2" path="res://Sounds/SFX/Hit53.ogg" id="7_fasow"]
 
 [node name="AudioManager" type="Node"]
@@ -19,3 +22,12 @@ bus = &"SFX"
 [node name="ClickButton" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_fasow")
 bus = &"SFX"
+
+[node name="Stage1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tnn7g")
+
+[node name="Stage2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lwpe1")
+
+[node name="Stage3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jmilc")
