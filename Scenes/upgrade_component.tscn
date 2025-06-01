@@ -692,7 +692,7 @@ vertical_alignment = 1
 script = ExtResource("6_chs1m")
 
 [node name="GODISCOMING" type="Timer" parent="TIME_LEFT"]
-wait_time = 300.0
+wait_time = 180.0
 one_shot = true
 autostart = true
 
