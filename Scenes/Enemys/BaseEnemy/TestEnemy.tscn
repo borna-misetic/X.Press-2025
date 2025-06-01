@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cafw0njeulctk"]
+[gd_scene load_steps=11 format=3 uid="uid://cafw0njeulctk"]
 
+[ext_resource type="Texture2D" uid="uid://b5mjxn8q5v4ej" path="res://Textures/EnemyAmoeba.png" id="1_r0wgd"]
 [ext_resource type="Texture2D" uid="uid://740y7gbq7ljb" path="res://Scripts/Borna.jpg" id="1_ypq6p"]
+[ext_resource type="Script" uid="uid://bny4lj7y3o4hu" path="res://Scripts/EnemyColor.gd" id="2_btwjt"]
 [ext_resource type="PackedScene" uid="uid://cctoqlo1g7qhv" path="res://Scenes/Enemys/BaseEnemy/EnemyBrain.tscn" id="2_ypq6p"]
 [ext_resource type="PackedScene" uid="uid://4l10alvui00w" path="res://Scenes/health.tscn" id="3_bsgnj"]
 [ext_resource type="PackedScene" uid="uid://eh6x3dh0iwr3" path="res://Scenes/HurtBox.tscn" id="4_83dho"]
@@ -19,6 +21,12 @@ radius = 89.2693
 position = Vector2(-3, 2)
 
 [node name="Borna" type="Sprite2D" parent="."]
+scale = Vector2(0.735, 0.735)
+texture = ExtResource("1_r0wgd")
+script = ExtResource("2_btwjt")
+
+[node name="Borna2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(3, 0)
 texture = ExtResource("1_ypq6p")
 
@@ -32,7 +40,6 @@ health = NodePath("../Health")
 collision_layer = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Eyes"]
-position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_ypq6p")
 
 [node name="HealthArea" type="Area2D" parent="."]
@@ -60,5 +67,7 @@ offset_left = -58.0
 offset_top = 164.0
 offset_right = -58.0
 offset_bottom = 164.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 MortalsHealth = NodePath("../Health")
 ItFollows = NodePath("..")

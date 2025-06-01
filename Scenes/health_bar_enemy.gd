@@ -1,5 +1,5 @@
 extends Control
-var time : float
+#var time : float
 @export var MortalsHealth : Health
 @export var ItFollows : CharacterBody2D
 @onready var HBar = $ProgressBar
@@ -13,8 +13,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	time += delta
-	#HBar.value = remap((1+sin(time*3)),0,2,0,100);
+	global_position=$"..".global_position+Vector2(-58,164)
+	rotation=-$"..".rotation
 	
 
 	
