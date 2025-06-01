@@ -9,3 +9,4 @@ extends Node
 @onready var Pickup := $Pickup
 @onready var Shoot := $Shoot
 @onready var Hit := $Hit
+@onready var Dash := $Dash

@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd6pjnym735gr"]
+
+[ext_resource type="Script" uid="uid://chju0agg5ycn8" path="res://intermission_2.gd" id="1_8ff0n"]
+[ext_resource type="FontFile" uid="uid://dmje0kblmalj4" path="res://Fonts/lato.heavy-italic.ttf" id="2_pykt7"]
+
+[sub_resource type="Animation" id="Animation_itb17"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, 358)]
+}
+
+[sub_resource type="Animation" id="Animation_3algy"]
+resource_name = "scene"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4.1),
+"transitions": PackedFloat32Array(1.8025, 0.267944, 2.14355, 0.517632),
+"update": 0,
+"values": [Vector2(160, 358), Vector2(160, 554), Vector2(160, 554), Vector2(160, 707)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g3hbq"]
+_data = {
+&"RESET": SubResource("Animation_itb17"),
+&"scene": SubResource("Animation_3algy")
+}
+
+[node name="Intermission2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ff0n")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_g3hbq")
+}
+autoplay = "scene"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 203.0
+offset_top = 411.0
+offset_right = 1660.0
+offset_bottom = 508.0
+theme_override_fonts/font = ExtResource("2_pykt7")
+theme_override_font_sizes/font_size = 80
+text = "Despite the odds stacked agianst you..."
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 470.0
+offset_top = 552.0
+offset_right = 1792.0
+offset_bottom = 649.0
+theme_override_fonts/font = ExtResource("2_pykt7")
+theme_override_font_sizes/font_size = 80
+text = "...you've managed to secure your future"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 358.0
+offset_right = -257.0
+offset_bottom = -361.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.16, 1.16)
+color = Color(0, 0, 0, 1)

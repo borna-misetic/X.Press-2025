@@ -14,11 +14,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if done==true:
 		Hits = 0;
-		for ENEMY in get_tree().get_nodes_in_group("Enemies"):
+		var sceneTree : SceneTree = get_tree()
+		for ENEMY in sceneTree.get_nodes_in_group("Enemies"):
 			Hits += 1;
 		if Hits == 0:
-			print("DOOOOOOONNNEEEE!")
-
+			gameOverScreen("You survived. Your gene will live on...", false, sceneTree)
 
 func _on_godiscoming_timeout() -> void:
 	for thing in get_tree().get_nodes_in_group("Blobs"):
@@ -31,3 +31,16 @@ func _on_godiscoming_timeout() -> void:
 		ExInst.global_position = Player.position+Vector2(700,700).rotated(remap(i,0,12,0,2*PI))
 		$".".add_child(ExInst)
 	done = true
+
+func gameOverScreen(text: String, lost : bool, sceneTree : SceneTree) -> void:
+	$"../FinishScreen/Label".text = text
+	$"../AnimationPlayer".play("player_end")
+	print_tree()
+	await $"../AnimationPlayer".animation_finished
+	if(!lost):
+		if(get_parent().name == "Main"): # CRIMES AGAINST HUMANITY
+			sceneTree.change_scene_to_file("res://Scenes/intermission_2.tscn")
+		elif(get_parent().name == "Main2"):
+			sceneTree.change_scene_to_file("res://Scenes/intermission_3.tscn")
+	else:
+		sceneTree.reload_current_scene()
