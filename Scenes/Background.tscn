@@ -11,7 +11,7 @@
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.507353, 0.0898877), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_3da57"]
+[sub_resource type="CurveTexture" id="CurveTexture_27ak2"]
 curve = SubResource("Curve_o7gcj")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5347u"]
@@ -29,7 +29,7 @@ tangential_accel_min = -0.300002
 tangential_accel_max = -0.0100022
 scale_min = 10.0
 scale_max = 20.0
-alpha_curve = SubResource("CurveTexture_3da57")
+alpha_curve = SubResource("CurveTexture_27ak2")
 hue_variation_min = 0.04
 hue_variation_max = 0.4
 
@@ -37,7 +37,7 @@ hue_variation_max = 0.4
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.507353, 0.47191), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_o7gcj"]
+[sub_resource type="CurveTexture" id="CurveTexture_7kl6s"]
 curve = SubResource("Curve_swmo4")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3da57"]
@@ -55,7 +55,7 @@ tangential_accel_min = 0.199998
 tangential_accel_max = 0.799998
 scale_min = 0.4
 scale_max = 0.8
-alpha_curve = SubResource("CurveTexture_o7gcj")
+alpha_curve = SubResource("CurveTexture_7kl6s")
 hue_variation_min = -0.19
 hue_variation_max = 0.00999998
 
