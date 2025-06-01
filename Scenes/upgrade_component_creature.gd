@@ -3,9 +3,9 @@ extends Control
 var upgradeShown = false
 var upgradeShownBIG = false
 
-var DashUnlocked := true
-var RockUnlocked := false
-var TailUnlocked := false
+var DashUnlocked := false
+var SpitUnlocked := false
+var CloudUnlocked := false
 
 @export var experienceHanlder : Node
 @export var healthComponent : Health
@@ -39,9 +39,9 @@ func showUpgradeBIG():
 		$BigUpgradePanel/BigEvolvePlay.play("BigEvolve")
 		if (DashUnlocked==false):
 			$BigUpgradePanel/Rows/HBoxContainer/TextureRect/DASH.disabled=false
-		if (RockUnlocked==false):
+		if (SpitUnlocked==false):
 			$BigUpgradePanel/Rows/HBoxContainer/TextureRect2/SPIT.disabled=false
-		if (TailUnlocked==false):
+		if (CloudUnlocked==false):
 			$BigUpgradePanel/Rows/HBoxContainer/TextureRect3/CLOUD.disabled=false
 		upgradeShownBIG = true
 
@@ -92,7 +92,7 @@ func _on_dash_pressed() -> void:
 
 
 func _on_spit_pressed() -> void:
-	RockUnlocked=true
+	SpitUnlocked=true
 	GunsYAY.show()
 	$BigUpgradePanel/Rows/HBoxContainer/TextureRect/DASH.disabled=true
 	$BigUpgradePanel/Rows/HBoxContainer/TextureRect2/SPIT.disabled=true
@@ -101,7 +101,7 @@ func _on_spit_pressed() -> void:
 
 
 func _on_cloud_pressed() -> void:
-	TailUnlocked=true
+	CloudUnlocked=true
 	$BigUpgradePanel/Rows/HBoxContainer/TextureRect/DASH.disabled=true
 	$BigUpgradePanel/Rows/HBoxContainer/TextureRect2/SPIT.disabled=true
 	$BigUpgradePanel/Rows/HBoxContainer/TextureRect3/CLOUD.disabled=true

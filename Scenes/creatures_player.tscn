@@ -1,0 +1,89 @@
+[gd_scene load_steps=15 format=3 uid="uid://bxkyef3ijw38u"]
+
+[ext_resource type="PackedScene" uid="uid://cj2kxni3xgmrl" path="res://Scenes/dash_component.tscn" id="1_qaqp5"]
+[ext_resource type="PackedScene" uid="uid://tag2423ha3ts" path="res://Scenes/EyeCandy/ghost_sprite/player_ghost_sprite_creature.tscn" id="2_qaqp5"]
+[ext_resource type="Texture2D" uid="uid://ceb23oxjkxf5g" path="res://Textures/Velo3Ce.png" id="3_qaqp5"]
+[ext_resource type="Script" path="res://Scripts/player_sprite.gd" id="4_85xrh"]
+[ext_resource type="Texture2D" uid="uid://cyi56ypp3t22r" path="res://Textures/Amoeba.png" id="5_vndj2"]
+[ext_resource type="PackedScene" uid="uid://ccx04f54j1bka" path="res://Scenes/player_component.tscn" id="6_iywck"]
+[ext_resource type="PackedScene" uid="uid://bftqxpndtywmk" path="res://Scenes/camera_component.tscn" id="7_nnofi"]
+[ext_resource type="PackedScene" uid="uid://4l10alvui00w" path="res://Scenes/health.tscn" id="8_nynmn"]
+[ext_resource type="PackedScene" uid="uid://6xylpf7hnlfk" path="res://Scenes/experience_handler.tscn" id="9_t22c3"]
+[ext_resource type="PackedScene" uid="uid://bll45vtkjlj05" path="res://Scenes/Health bar.tscn" id="11_2dptg"]
+[ext_resource type="PackedScene" uid="uid://ywd8vefnhx8d" path="res://Scenes/upgrade_component_creature.tscn" id="11_qaqp5"]
+[ext_resource type="PackedScene" uid="uid://yqllr5qhgisb" path="res://Scenes/Weapons/cell_stage/acid_spit/double_acid_shooter.tscn" id="12_pukfe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jbmmg"]
+radius = 200.562
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05x1w"]
+radius = 130.465
+
+[node name="CreaturePlayer" type="CharacterBody2D" groups=["Player"]]
+
+[node name="DashComponent" parent="." node_paths=PackedStringArray("body") instance=ExtResource("1_qaqp5")]
+body = NodePath("..")
+ghost_node = ExtResource("2_qaqp5")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+position = Vector2(1, -1)
+rotation = -4.71237
+texture = ExtResource("3_qaqp5")
+offset = Vector2(-13, 14)
+script = ExtResource("4_85xrh")
+
+[node name="PlayerSprite2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(70, -70)
+texture = ExtResource("5_vndj2")
+offset = Vector2(-13, 14)
+
+[node name="PlayerComponent" parent="." node_paths=PackedStringArray("camera", "player", "playerSprite", "dashUpgrade") instance=ExtResource("6_iywck")]
+position = Vector2(-4, 1)
+camera = NodePath("../CameraComponent")
+player = NodePath("..")
+playerSprite = NodePath("..")
+dashUpgrade = NodePath("../DashComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jbmmg")
+
+[node name="CameraComponent" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_nnofi")]
+player = NodePath("..")
+lerpScale = 7.0
+moveScale = 0.2
+
+[node name="Health" parent="." node_paths=PackedStringArray("entity") instance=ExtResource("8_nynmn")]
+entity = NodePath("../Hearth")
+
+[node name="ExperienceHandler" parent="." node_paths=PackedStringArray("player", "upgradeComponent") instance=ExtResource("9_t22c3")]
+player = NodePath("..")
+upgradeComponent = NodePath("../CanvasLayer/Upgrade_component")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer" node_paths=PackedStringArray("MortalsHealth", "ItFollows", "Camera") instance=ExtResource("11_2dptg")]
+MortalsHealth = NodePath("../../Health")
+ItFollows = NodePath("../..")
+Camera = NodePath("../../CameraComponent")
+
+[node name="Upgrade_component" parent="CanvasLayer" node_paths=PackedStringArray("experienceHanlder", "healthComponent", "playerComponent") instance=ExtResource("11_qaqp5")]
+experienceHanlder = NodePath("../../ExperienceHandler")
+healthComponent = NodePath("../../Health")
+playerComponent = NodePath("../../PlayerComponent")
+
+[node name="Fart CD timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="DoubleAcidShooter" parent="." instance=ExtResource("12_pukfe")]
+position = Vector2(107, 25)
+rotation = -4.38927
+scale = Vector2(1.5, 1)
+
+[node name="Hearth" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hearth"]
+shape = SubResource("CircleShape2D_05x1w")

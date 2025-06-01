@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://tag2423ha3ts"]
+
+[ext_resource type="Texture2D" uid="uid://ceb23oxjkxf5g" path="res://Textures/Velo3Ce.png" id="1_4q84x"]
+[ext_resource type="Script" uid="uid://dpayl8i0njto1" path="res://Scenes/EyeCandy/ghost_sprite/ghost_sprite.gd" id="2_r3wwc"]
+
+[node name="PlayerGhostSprite" type="Sprite2D"]
+z_index = -1
+rotation = 1.5708
+texture = ExtResource("1_4q84x")
+script = ExtResource("2_r3wwc")
+metadata/_custom_type_script = "uid://dpayl8i0njto1"
