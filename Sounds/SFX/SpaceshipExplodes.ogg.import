@@ -14,6 +14,6 @@ dest_files=["res://.godot/imported/SpaceshipExplodes.ogg-ed77a353f4ee4a5ddac64db
 
 loop=false
 loop_offset=0
-bpm=0
+bpm=0.0
 beat_count=0
-bar_beats=4
+bar_beats=2

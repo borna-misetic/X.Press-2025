@@ -10,3 +10,5 @@ extends Node
 @onready var Shoot := $Shoot
 @onready var Hit := $Hit
 @onready var Dash := $Dash
+@onready var Ending := $Ending
+@onready var Nuke := $Nuke

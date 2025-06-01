@@ -3,7 +3,7 @@ extends Control
 var upgradeShown = false
 var upgradeShownBIG = false
 
-var DashUnlocked := true
+var DashUnlocked := false
 var SpitUnlocked := false
 var CloudUnlocked := false
 

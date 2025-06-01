@@ -17,7 +17,7 @@ var alive = true
 func _ready() -> void:
 	PlayerGlobal.register_player(player);
 	health.died.connect(on_death)
-#	Guns.hide()
+	#Guns.hide()
 	
 func _physics_process(delta: float) -> void:
 	if(alive):
