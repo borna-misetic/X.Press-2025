@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7bw6vbr7viws"]
+
+[ext_resource type="Texture2D" uid="uid://brbtmbjinsaj0" path="res://Textures/Human1.png" id="1_s08k1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s08k1"]
+radius = 28.1603
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Human1" type="Sprite2D" parent="."]
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("1_s08k1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s08k1")
