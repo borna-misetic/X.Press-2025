@@ -36,7 +36,7 @@ func take_damage(amount: int):
 	current_health -= amount;
 	clamp_health();
 	took_damage.emit(amount);
-	if current_health == 0:
+	if current_health <= 0:
 		died.emit();
 	
 

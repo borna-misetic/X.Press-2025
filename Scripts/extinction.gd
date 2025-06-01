@@ -14,10 +14,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if done==true:
 		Hits = 0;
-		for ENEMY in get_tree().get_nodes_in_group("Enemies"):
+		var sceneTree : SceneTree = get_tree()
+		for ENEMY in sceneTree.get_nodes_in_group("Enemies"):
 			Hits += 1;
 		if Hits == 0:
-			print("DOOOOOOONNNEEEE!")
+			$"../FinishScreen/Label".text = "You survived. Your gene will live on..."
+			$"../AnimationPlayer".play("player_end")
+			print_tree()
+			await $"../AnimationPlayer".animation_finished
+			sceneTree.change_scene_to_file("res://Scenes/intermission_2.tscn")
 
 
 func _on_godiscoming_timeout() -> void:
