@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://du1wc25ybtnt4"]
+
+[ext_resource type="Script" uid="uid://ck8krdfpgskmg" path="res://Scenes/human.gd" id="1_073c6"]
+[ext_resource type="Texture2D" uid="uid://brbtmbjinsaj0" path="res://Textures/Human1.png" id="1_j03jf"]
+[ext_resource type="PackedScene" uid="uid://bftqxpndtywmk" path="res://Scenes/camera_component.tscn" id="2_073c6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s08k1"]
+radius = 28.1603
+
+[node name="Human" type="CharacterBody2D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_073c6")
+camera = NodePath("CameraComponent")
+
+[node name="Human1" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("1_j03jf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s08k1")
+
+[node name="CameraComponent" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_073c6")]
+player = NodePath("..")

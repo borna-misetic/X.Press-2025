@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://dtdk4dl77tgqi"]
 
 [ext_resource type="Texture2D" uid="uid://cyl14xq4ttfdf" path="res://Textures/City.png" id="1_u7naw"]
-[ext_resource type="PackedScene" uid="uid://b7bw6vbr7viws" path="res://Scenes/human_1.tscn" id="2_kyn5i"]
+[ext_resource type="PackedScene" uid="uid://du1wc25ybtnt4" path="res://Scenes/human.tscn" id="2_kyn5i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyn5i"]
 size = Vector2(34.87, 47.1735)
@@ -739,5 +739,8 @@ position = Vector2(-2669.5, 502)
 scale = Vector2(16.92, 20.52)
 shape = SubResource("RectangleShape2D_pdxid")
 
-[node name="Human2" parent="." instance=ExtResource("2_kyn5i")]
-position = Vector2(129, 115)
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_kyn5i")]
+position = Vector2(127, 47)
+
+[node name="NuclearTimer" type="Timer" parent="."]
+wait_time = 30.0

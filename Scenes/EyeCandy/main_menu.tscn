@@ -53,7 +53,7 @@ offset_bottom = 12.3333
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_l0xik")
 theme_override_font_sizes/font_size = 100
-text = "GAME_NAME"
+text = "PERDOMINANT"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainPanel"]
 layout_mode = 0
