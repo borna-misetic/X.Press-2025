@@ -14,8 +14,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	var tween_fade = get_tree().create_tween();
-	tween_fade.tween_property(self, "self_modulate", Color(1,1,), 0.45);
-	tween_fade.play();
-	await tween_fade.finished;
+#	var tween_fade = get_tree().create_tween();
+#	tween_fade.tween_property(self, "self_modulate", Color(1,1,), 0.45);
+#	tween_fade.play();
+#	await tween_fade.finished;
 	queue_free()

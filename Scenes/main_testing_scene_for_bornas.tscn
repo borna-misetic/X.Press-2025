@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://v76yw6xit0ya" path="res://Scenes/ameba_player.tscn" id="1_0ckc4"]
 [ext_resource type="PackedScene" uid="uid://cweao267oa60y" path="res://Scenes/Background.tscn" id="2_g4mvs"]
-[ext_resource type="Script" path="res://Scripts/background.gd" id="3_qu8yy"]
+[ext_resource type="Script" uid="uid://bkh7cy8217nig" path="res://Scripts/background.gd" id="3_qu8yy"]
 [ext_resource type="PackedScene" uid="uid://ruriot5w34aa" path="res://Scenes/spawner_component.tscn" id="4_tsgkl"]
 [ext_resource type="PackedScene" uid="uid://bhynyvyo2b5qu" path="res://Scenes/ameba_blob.tscn" id="5_rutjs"]
 [ext_resource type="PackedScene" uid="uid://cafw0njeulctk" path="res://Scenes/Enemys/BaseEnemy/TestEnemy.tscn" id="6_jmgq6"]

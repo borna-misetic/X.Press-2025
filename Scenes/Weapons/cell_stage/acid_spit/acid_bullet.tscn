@@ -25,6 +25,7 @@ shape = SubResource("CircleShape2D_r7q32")
 [node name="HurtBox" parent="." node_paths=PackedStringArray("hurt_area") instance=ExtResource("3_plwch")]
 position = Vector2(-1, 0)
 hurt_area = NodePath("../Hurt")
+grupa = "Enemies"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw7bawh57rayx"]
+[gd_scene load_steps=10 format=3 uid="uid://dw7bawh57rayx"]
 
 [ext_resource type="Script" uid="uid://ca6kqd3nphv7p" path="res://Scenes/acid_fart.gd" id="1_5sncf"]
 [ext_resource type="Texture2D" uid="uid://bax0hg4tkerc" path="res://Textures/smoke.png" id="1_vpvhi"]
+[ext_resource type="PackedScene" uid="uid://eh6x3dh0iwr3" path="res://Scenes/HurtBox.tscn" id="3_y8y1m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qvxjp"]
 radius = 100.0
@@ -65,5 +66,9 @@ process_material = SubResource("ParticleProcessMaterial_5sncf")
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="HurtBox" parent="." node_paths=PackedStringArray("hurt_area") instance=ExtResource("3_y8y1m")]
+hurt_area = NodePath("../Hurtbox")
+grupa = "Enemies"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

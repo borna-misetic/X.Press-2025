@@ -29,13 +29,13 @@ speed = 5000
 health = NodePath("../Health")
 
 [node name="Eyes" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Eyes"]
 position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_ypq6p")
 
 [node name="HealthArea" type="Area2D" parent="."]
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HealthArea"]
 position = Vector2(2, -2)
@@ -46,8 +46,11 @@ entity = NodePath("../HealthArea")
 
 [node name="HurtBox" parent="." node_paths=PackedStringArray("hurt_area") instance=ExtResource("4_83dho")]
 hurt_area = NodePath("../Hurt")
+grupa = "Player"
 
 [node name="Hurt" type="Area2D" parent="."]
+light_mask = 3
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt"]
 shape = SubResource("CircleShape2D_83dho")
